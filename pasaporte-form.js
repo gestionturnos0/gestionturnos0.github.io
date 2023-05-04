@@ -24,6 +24,13 @@ function aggiornaDettaglioPrenotazione() {
     $('#divRiepilogoPrenotazione').slideDown(1000);
 }
 function aggiornaElencoPrenotanti() {
+    let name = '';
+    $('figure.main-nav__avatar').each(function( key, value ) {
+        name = $(this).find('figcaption').html();
+    });
+    console.log(name);
+    
+
     $('#divRiepilogoPrenotazione > #divTitolo').text($("#typeofbookingddl option:selected").text());
     switch ($('#typeofbookingddl').val()) {
         case '1':
@@ -31,7 +38,7 @@ function aggiornaElencoPrenotanti() {
             
 
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').empty();
-            $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>name</li>')
+            $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + name + '</li>')
 
             break;
         case '2':
@@ -45,7 +52,7 @@ function aggiornaElencoPrenotanti() {
             }
 
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').empty();
-            $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>name</li>');
+            $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + name + '</li>');
             for (var i = 0; i < parseInt($('#ddlnumberofcompanions').val()); i++) {
                 $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + $('#Accompagnatori_' + i + '__CognomeAccompagnatore').val() + ' ' + $('#Accompagnatori_' + i + '__NomeAccompagnatore').val() + '</li>');
             }
@@ -1248,13 +1255,6 @@ $(function () {
             event.preventDefault();
             return;
         }
-
-
-
-
-
-
-
 
     });
 
