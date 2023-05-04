@@ -23,7 +23,7 @@ function aggiornaDettaglioPrenotazione() {
 
     $('#divRiepilogoPrenotazione').slideDown(1000);
 }
-/*function aggiornaElencoPrenotanti() {
+function aggiornaElencoPrenotanti() {
     $('#divRiepilogoPrenotazione > #divTitolo').text($("#typeofbookingddl option:selected").text());
     switch ($('#typeofbookingddl').val()) {
         case '1':
@@ -70,7 +70,7 @@ function aggiornaDettaglioPrenotazione() {
                 
             break;
     }
-}*/
+}
 
 function ShowInfoApplicant() {
     if ($('#infoapplicant').children().length > 1) {
