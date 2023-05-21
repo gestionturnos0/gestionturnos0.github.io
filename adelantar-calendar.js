@@ -1,3 +1,1 @@
-function adelantarCalendarioAFecha(date) {
-    $('#datetimepicker').data("DateTimePicker").viewDate(date);
-}
+$('#datetimepicker').data("DateTimePicker").viewDate(new Date('2023-08-04T01:00:00'));
