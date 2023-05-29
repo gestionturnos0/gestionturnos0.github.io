@@ -432,17 +432,50 @@ function GetDatiAddizionaliAccompagnatori() {
 }
 
 function getDropDownListsValues(_id, ddl, selectedValue) {
-    $.getJSON("/Services/GetDdlValuesByID/", {
-        id: _id
-    }, function (data) {
-        for (i = 0; i < data.length; i++) {
-            ddl.append($('<option/>', {
-                value: data[i].Value,
-                text: data[i].Text
-            }));
-        }
-        ddl.val(selectedValue);
-    })
+    //https://prenotami.esteri.it/Services/GetDdlValuesByID/ _id
+    console.log("getDropDownListsValues" + "-" + _id + "-" + ddl + "-" + selectedValue);
+    let ddlValuesById = [
+        0, //0
+        [{"Disabled":false,"Group":null,"Selected":false,"Text":"Si","Value":"1"},{"Disabled":false,"Group":null,"Selected":false,"Text":"No","Value":"2"}], //1
+        0, //2
+        0, //3
+        0, //4
+        0, //5
+        0, //6
+        0, //7
+        0, //8
+        0, //9
+        0, //10
+        [{"Disabled":false,"Group":null,"Selected":false,"Text":"Si","Value":"11"},{"Disabled":false,"Group":null,"Selected":false,"Text":"No","Value":"12"}], //11
+        0, //12
+        0, //13
+        0, //14
+        0, //15
+        0, //16
+        [{"Disabled":false,"Group":null,"Selected":false,"Text":"Casado/a","Value":"13"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Divorciado/a","Value":"14"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Viudo/a","Value":"15"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Soltero/a","Value":"16"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Separado/a","Value":"17"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Unido/a civilmente","Value":"18"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Separado/a de Un. Civ.","Value":"19"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Divorciado/a de Un. Civ.","Value":"20"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Viudo/a de Un. Civ.","Value":"21"}], //17
+        0, //18
+        0, //19
+        0, //20
+        0, //21
+        0, //22
+        0, //23
+        0, //24
+        0, //25
+        0, //26
+        0, //27
+        0, //28
+        0, //29
+    ];
+
+    console.log( ddlValuesById[_id]);
+
+    for (i = 0; i < ddlValuesById[_id].length; i++) {
+        ddl.append($('<option/>', {
+            value: ddlValuesById[_id][i].Value,
+            text: ddlValuesById[_id][i].Text
+        }));
+    }
+    ddl.val(selectedValue);
 };
 
 function saveDdlValue() {
