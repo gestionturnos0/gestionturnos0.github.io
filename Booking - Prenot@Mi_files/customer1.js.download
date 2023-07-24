@@ -1,1 +1,0 @@
-var __sl_matchers=[{protocol:/^https?$/i,host:/^prenotami\.esteri\.it(:[0-9]*)?$/i,path:/^\/Home\/Login$/,method:'post'},{protocol:/^https?$/i,host:/^prenotami\.esteri\.it(:[0-9]*)?$/i,path:/^\/Services\/Booking\/2$/,method:'post'}];
