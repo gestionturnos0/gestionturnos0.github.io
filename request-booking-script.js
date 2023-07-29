@@ -1,4 +1,5 @@
-function attemptBooking(selectedDay, idService) {
+function requestBooking(selectedDay, idService) {
+    //Retrieve timeslot and request booking on first time
     $.ajax({
         url: 'https://prenotami.esteri.it/BookingCalendar/RetrieveTimeSlots',
         type: 'POST',
@@ -33,6 +34,9 @@ function readTimeSlot(timeslot) {
             let selectedHour = "" + String(timeslot.OrarioInizioFascia.Hours).padStart(2, '0')  + ":" + String(timeslot.OrarioInizioFascia.Minutes).padStart(2, '0') + " - " + String(timeslot.OrarioFineFascia.Hours).padStart(2, '0')  + ":" + String(timeslot.OrarioFineFascia.Minutes).padStart(2, '0') + "(" + timeslot.SlotLiberi + ")"
             
             insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
+        }
+        else {
+            alert("No hay turnos disponibles en el día elegido");
         }
     } catch (exception) {
         console.log(exception)
