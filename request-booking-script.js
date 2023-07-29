@@ -1,4 +1,3 @@
-
 function attemptBooking(selectedDay, idService) {
     $.ajax({
         url: 'https://prenotami.esteri.it/BookingCalendar/RetrieveTimeSlots',
