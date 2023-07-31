@@ -1,4 +1,13 @@
+//Attempt requesting booking
+let selectedDay = sessionStorage.getItem("selectedDay");
+let idService = sessionStorage.getItem("idService");
+requestBooking(selectedDay, idService);
+
 function requestBooking(selectedDay, idService) {
+    console.log("Requesting booking...")
+    console.log(selectedDay);
+    console.log(idService);
+
     //Retrieve timeslot and request booking on first time
     $.ajax({
         url: 'https://prenotami.esteri.it/BookingCalendar/RetrieveTimeSlots',
