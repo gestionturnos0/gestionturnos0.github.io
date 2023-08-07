@@ -43,7 +43,7 @@ function readTimeSlot(timeslot) {
             insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
         }
         else {
-            alert("No hay turnos disponibles en el día elegido");
+            alert("No hay turnos disponibles en el día elegido. Probá otro día.");
         }
     } catch (exception) {
         console.log(exception)
@@ -62,12 +62,16 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
         success: function (response) {
             console.log("success");
             console.log(response);
-            alert("Puede que new booking!");
+            alert("Puede que new booking!" + JSON.stringify(JSON.parse(response)));
+            if (response.url) {
+                window.location.replace("https://prenotami.esteri.it/" + response.url);
+            }            
         },
         error: function (xhr, status, error) {                    
             console.log(xhr.statusText);
             console.log(status);
             console.log(error);
+            alert("Error: " + error);
         }
     });
 }
