@@ -62,7 +62,7 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
         success: function (response) {
             console.log("success");
             console.log(response);
-            alert("Puede que new booking!" + response.toString());
+            alert("Puede que new booking! " + JSON.stringify(response));
             if (response.url) {
                 window.location.replace("https://prenotami.esteri.it/" + response.url);
             }            
