@@ -1,7 +1,5 @@
 //Attempt requesting booking
-let selectedDay = sessionStorage.getItem("selectedDay");
-let idService = sessionStorage.getItem("idService");
-requestBooking(selectedDay, idService);
+requestBooking(sessionStorage.getItem("selectedDay"), sessionStorage.getItem("idService")); //Reading value without incitializing varible to avoid error because of duplicated variables when trying multiple times
 
 function requestBooking(selectedDay, idService) {
     console.log("Requesting booking...")
@@ -49,6 +47,7 @@ function readTimeSlot(timeslot) {
         }
     } catch (exception) {
         console.log(exception)
+        alert("Error obteniendo horarios. " + exception);
     }
 };
 
@@ -61,7 +60,9 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
         data: { "idCalendarioGiornaliero": idCalendarioGiornaliero, "selectedDay": selectedDay, "selectedHour": selectedHour },
         dataType: "json",
         success: function (response) {
-            alert("NEW BOOKING!");
+            console.log("success");
+            console.log(response);
+            alert("Puede que new booking!");
         },
         error: function (xhr, status, error) {                    
             console.log(xhr.statusText);
