@@ -21,7 +21,7 @@ function requestBooking(selectedDay, idService) {
         error: function (response) {
             console.log('error')
             console.log(response)
-            alert('error')
+            alert("Error 1 obteniendo horarios. Prueba de nuevo. " + exception);
         }
     });
 }
@@ -43,11 +43,11 @@ function readTimeSlot(timeslot) {
             insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
         }
         else {
-            alert("No hay turnos disponibles en el día elegido. Probá otro día.");
+            alert("No hay turnos disponibles en el día elegido. Pureba otro día.");
         }
     } catch (exception) {
         console.log(exception)
-        alert("Error obteniendo horarios. " + exception);
+        alert("Error 2 obteniendo horarios. Pureba de nuevo. " + exception);
     }
 };
 
@@ -62,16 +62,22 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
         success: function (response) {
             console.log("success");
             console.log(response);
-            alert("Puede que new booking! " + JSON.stringify(response));
+        
             if (response.url) {
-                window.location.replace("https://prenotami.esteri.it/" + response.url);
+                let url = response.url;
+                if  (url.includes("isBooking=True")) {
+                    alert("RESERVADO CON EXITO! " + JSON.stringify(response));
+                    window.location.replace("https://prenotami.esteri.it/" + response.url);
+                } else {
+                    alert(JSON.stringify(response))
+                }
             }            
         },
         error: function (xhr, status, error) {                    
             console.log(xhr.statusText);
             console.log(status);
             console.log(error);
-            alert("Error: " + error);
+            alert("Error insertando reserva: " + error);
         }
     });
 }
