@@ -2,12 +2,14 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-<form action="https://prenotami.esteri.it/Services/Booking/4685" enctype="multipart/form-data" id="bookingForm"
-    method="post">
+<form action="https://prenotami.esteri.it/Services/Booking/335" enctype="multipart/form-data" id="bookingForm"
+    method="post">    
     <div class="container" id="div-container">
 
-        <h1 class="heading-container" id="ServizioDescrizione">Servizio rilascio passaporti</h1>
-        <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden" value="Servizio rilascio passaporti">
+        <h1 class="heading-container" id="ServizioDescrizione">Il cittadino dovra' avere aggiornata la propria posizione
+            anagrafica e di stato civile. </h1>
+        <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden"
+            value="Il cittadino dovra&#39; avere aggiornata la propria posizione anagrafica e di stato civile. ">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
             id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="False">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
@@ -30,7 +32,7 @@ container.innerHTML = `
                     name="IDServizioConsolare" type="hidden" value="2">
                 <input data-val="true" data-val-number="Il campo IDServizioErogato deve essere un numero."
                     data-val-required="The IDServizioErogato field is required." id="IDServizioErogato"
-                    name="IDServizioErogato" type="hidden" value="4685">
+                    name="IDServizioErogato" type="hidden" value="335">
                 <label>Tipo Prenotazione</label>
                 <select id="typeofbookingddl"></select>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
@@ -38,7 +40,7 @@ container.innerHTML = `
                     name="IdTipoPrenotazione" type="hidden" value="0">
                 <input data-val="true" data-val-number="Il campo NumMaxAccompagnatori deve essere un numero."
                     data-val-required="The NumMaxAccompagnatori field is required." id="hiddenNumMax"
-                    name="NumMaxAccompagnatori" type="hidden" value="5">
+                    name="NumMaxAccompagnatori" type="hidden" value="4">
 
 
 
@@ -50,7 +52,6 @@ container.innerHTML = `
                     <option value="2"> 2 </option>
                     <option value="3"> 3 </option>
                     <option value="4"> 4 </option>
-                    <option value="5"> 5 </option>
                 </select>
                 <input data-val="true" data-val-number="Il campo NumAccompagnatoriSelected deve essere un numero."
                     data-val-required="The NumAccompagnatoriSelected field is required." id="numAccSelected"
@@ -61,10 +62,10 @@ container.innerHTML = `
                 <h2>Dati Richiedente</h2>
                 <div id="datoaddizionale_0">
                     <label id="addizionale">
-                        Indirizzo completo di residenza &nbsp;<b>*</b> </label>
+                        Numero carta d'identità &nbsp;<b>*</b> </label>
                     <input id="DatiAddizionaliPrenotante_0___Descrizione"
                         name="DatiAddizionaliPrenotante[0]._Descrizione" type="hidden"
-                        value="Indirizzo completo di residenza">
+                        value="Numero carta d&#39;identità">
                     <input id="DatiAddizionaliPrenotante_0___testo" maxlength="100"
                         name="DatiAddizionaliPrenotante[0]._testo" onchange="ControlloTesto(this)" type="text"
                         value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
@@ -79,20 +80,20 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="41227"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="42040"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="25"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="7"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
                     value="2"><input id="hiddenRegEx_0" name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_1">
                     <label id="addizionale">
-                        Figli minorenni &nbsp;<b>*</b> </label>
+                        Stato civile &nbsp;<b>*</b> </label>
                     <input id="DatiAddizionaliPrenotante_1___Descrizione"
-                        name="DatiAddizionaliPrenotante[1]._Descrizione" type="hidden" value="Figli minorenni">
+                        name="DatiAddizionaliPrenotante[1]._Descrizione" type="hidden" value="Stato civile">
                     <select id="ddls_1" data-index="1" onchange="ControloSelect(this)">
                         <option value="0"> </option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
@@ -107,23 +108,24 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId1"
-                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="41228"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="42041"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="11"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="17"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
                     value="3"><input id="hiddenRegEx_1" name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_2">
                     <label id="addizionale">
-                        Numero figli minorenni &nbsp;<b>*</b> </label>
+                        In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
                     <input id="DatiAddizionaliPrenotante_2___Descrizione"
-                        name="DatiAddizionaliPrenotante[2]._Descrizione" type="hidden" value="Numero figli minorenni">
-                    <input id="DatiAddizionaliPrenotante_2___testo" maxlength="100"
-                        name="DatiAddizionaliPrenotante[2]._testo" onchange="ControlloTesto(this)" type="text"
-                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        name="DatiAddizionaliPrenotante[2]._Descrizione" type="hidden"
+                        value="In possesso di passaporto italiano scaduto/in scadenza">
+                    <select id="ddls_2" data-index="2" onchange="ControloSelect(this)">
+                        <option value="0"> </option>
+                    </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_2___Obbligatorio"
                         name="DatiAddizionaliPrenotante[2]._Obbligatorio" type="hidden" value="True">
                     <div>
@@ -135,25 +137,25 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId2"
-                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="41229"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="42042"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="12"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="1"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
-                    value="2"><input id="hiddenRegEx_2" name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.RegEx"
+                    value="3"><input id="hiddenRegEx_2" name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_3">
                     <label id="addizionale">
-                        Stato civile &nbsp;<b>*</b> </label>
+                        Numero di passaporto </label>
                     <input id="DatiAddizionaliPrenotante_3___Descrizione"
-                        name="DatiAddizionaliPrenotante[3]._Descrizione" type="hidden" value="Stato civile">
-                    <select id="ddls_3" data-index="3" onchange="ControloSelect(this)">
-                        <option value="0"> </option>
-                    </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        name="DatiAddizionaliPrenotante[3]._Descrizione" type="hidden" value="Numero di passaporto">
+                    <input id="DatiAddizionaliPrenotante_3___testo" maxlength="100"
+                        name="DatiAddizionaliPrenotante[3]._testo" onchange="ControlloTesto(this)" type="text"
+                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_3___Obbligatorio"
-                        name="DatiAddizionaliPrenotante[3]._Obbligatorio" type="hidden" value="True">
+                        name="DatiAddizionaliPrenotante[3]._Obbligatorio" type="hidden" value="False">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_3"
                                 data-valmsg-replace="true" style="color:red"></span></p>
@@ -163,26 +165,27 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId3"
-                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="41230"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="42043"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="17"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="2"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
-                    value="3"><input id="hiddenRegEx_3" name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.RegEx"
+                    value="2"><input id="hiddenRegEx_3" name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_4">
                     <label id="addizionale">
-                        Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
+                        Data di scadenza del passaporto (dd/mm/yyyy) </label>
                     <input id="DatiAddizionaliPrenotante_4___Descrizione"
                         name="DatiAddizionaliPrenotante[4]._Descrizione" type="hidden"
-                        value="Nome e cognome coniuge / unito-a civilmente">
-                    <input id="DatiAddizionaliPrenotante_4___testo" maxlength="100"
-                        name="DatiAddizionaliPrenotante[4]._testo" onchange="ControlloTesto(this)" type="text"
-                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        value="Data di scadenza del passaporto (dd/mm/yyyy)">
+                    <input class="text-box single-line" data-val="true"
+                        data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_4___data"
+                        name="DatiAddizionaliPrenotante[4]._data" type="date" value=""><input data-val="true"
+                        data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_4___Obbligatorio"
-                        name="DatiAddizionaliPrenotante[4]._Obbligatorio" type="hidden" value="True">
+                        name="DatiAddizionaliPrenotante[4]._Obbligatorio" type="hidden" value="False">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_4"
                                 data-valmsg-replace="true" style="color:red"></span></p>
@@ -192,26 +195,26 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="41231"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="42044"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="18"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="5"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
-                    value="2"><input id="hiddenRegEx_4" name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.RegEx"
+                    value="1"><input id="hiddenRegEx_4" name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_5">
                     <label id="addizionale">
-                        In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
+                        Autorità che ha rilasciato il passaporto </label>
                     <input id="DatiAddizionaliPrenotante_5___Descrizione"
                         name="DatiAddizionaliPrenotante[5]._Descrizione" type="hidden"
-                        value="In possesso di passaporto italiano scaduto/in scadenza">
-                    <select id="ddls_5" data-index="5" onchange="ControloSelect(this)">
-                        <option value="0"> </option>
-                    </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        value="Autorità che ha rilasciato il passaporto">
+                    <input id="DatiAddizionaliPrenotante_5___testo" maxlength="100"
+                        name="DatiAddizionaliPrenotante[5]._testo" onchange="ControlloTesto(this)" type="text"
+                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_5___Obbligatorio"
-                        name="DatiAddizionaliPrenotante[5]._Obbligatorio" type="hidden" value="True">
+                        name="DatiAddizionaliPrenotante[5]._Obbligatorio" type="hidden" value="False">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_5"
                                 data-valmsg-replace="true" style="color:red"></span></p>
@@ -221,20 +224,20 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId5"
-                    name="DatiAddizionaliPrenotante[5]._Id" type="hidden" value="41232"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[5]._Id" type="hidden" value="42045"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_5"
                     name="DatiAddizionaliPrenotante[5]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="1"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="4"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_5"
                     name="DatiAddizionaliPrenotante[5]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
-                    value="3"><input id="hiddenRegEx_5" name="DatiAddizionaliPrenotante[5]._TipoDatoAddizionale.RegEx"
+                    value="2"><input id="hiddenRegEx_5" name="DatiAddizionaliPrenotante[5]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_6">
                     <label id="addizionale">
-                        Numero di passaporto &nbsp;<b>*</b> </label>
+                        Numero figli minorenni &nbsp;<b>*</b> </label>
                     <input id="DatiAddizionaliPrenotante_6___Descrizione"
-                        name="DatiAddizionaliPrenotante[6]._Descrizione" type="hidden" value="Numero di passaporto">
+                        name="DatiAddizionaliPrenotante[6]._Descrizione" type="hidden" value="Numero figli minorenni">
                     <input id="DatiAddizionaliPrenotante_6___testo" maxlength="100"
                         name="DatiAddizionaliPrenotante[6]._testo" onchange="ControlloTesto(this)" type="text"
                         value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
@@ -249,25 +252,26 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId6"
-                    name="DatiAddizionaliPrenotante[6]._Id" type="hidden" value="41233"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[6]._Id" type="hidden" value="42046"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_6"
                     name="DatiAddizionaliPrenotante[6]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="2"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="12"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_6"
                     name="DatiAddizionaliPrenotante[6]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
                     value="2"><input id="hiddenRegEx_6" name="DatiAddizionaliPrenotante[6]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_7">
                     <label id="addizionale">
-                        Statura in cm &nbsp;<b>*</b> </label>
+                        Nome e cognome figlio minorenne </label>
                     <input id="DatiAddizionaliPrenotante_7___Descrizione"
-                        name="DatiAddizionaliPrenotante[7]._Descrizione" type="hidden" value="Statura in cm">
+                        name="DatiAddizionaliPrenotante[7]._Descrizione" type="hidden"
+                        value="Nome e cognome figlio minorenne">
                     <input id="DatiAddizionaliPrenotante_7___testo" maxlength="100"
                         name="DatiAddizionaliPrenotante[7]._testo" onchange="ControlloTesto(this)" type="text"
                         value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_7___Obbligatorio"
-                        name="DatiAddizionaliPrenotante[7]._Obbligatorio" type="hidden" value="True">
+                        name="DatiAddizionaliPrenotante[7]._Obbligatorio" type="hidden" value="False">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_7"
                                 data-valmsg-replace="true" style="color:red"></span></p>
@@ -277,25 +281,27 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId7"
-                    name="DatiAddizionaliPrenotante[7]._Id" type="hidden" value="41234"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[7]._Id" type="hidden" value="42047"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_7"
                     name="DatiAddizionaliPrenotante[7]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="22"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="13"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_7"
                     name="DatiAddizionaliPrenotante[7]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
                     value="2"><input id="hiddenRegEx_7" name="DatiAddizionaliPrenotante[7]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
                 <div id="datoaddizionale_8">
                     <label id="addizionale">
-                        Colore degli occhi &nbsp;<b>*</b> </label>
+                        Data di nascita figlio minorenne </label>
                     <input id="DatiAddizionaliPrenotante_8___Descrizione"
-                        name="DatiAddizionaliPrenotante[8]._Descrizione" type="hidden" value="Colore degli occhi">
-                    <select id="ddls_8" data-index="8" onchange="ControloSelect(this)">
-                        <option value="0"> </option>
-                    </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        name="DatiAddizionaliPrenotante[8]._Descrizione" type="hidden"
+                        value="Data di nascita figlio minorenne">
+                    <input class="text-box single-line" data-val="true"
+                        data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_8___data"
+                        name="DatiAddizionaliPrenotante[8]._data" type="date" value=""><input data-val="true"
+                        data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_8___Obbligatorio"
-                        name="DatiAddizionaliPrenotante[8]._Obbligatorio" type="hidden" value="True">
+                        name="DatiAddizionaliPrenotante[8]._Obbligatorio" type="hidden" value="False">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_8"
                                 data-valmsg-replace="true" style="color:red"></span></p>
@@ -305,77 +311,79 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId8"
-                    name="DatiAddizionaliPrenotante[8]._Id" type="hidden" value="41235"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[8]._Id" type="hidden" value="42048"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_8"
                     name="DatiAddizionaliPrenotante[8]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
-                    value="23"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    value="15"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
                     data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_8"
                     name="DatiAddizionaliPrenotante[8]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
-                    value="3"><input id="hiddenRegEx_8" name="DatiAddizionaliPrenotante[8]._TipoDatoAddizionale.RegEx"
+                    value="1"><input id="hiddenRegEx_8" name="DatiAddizionaliPrenotante[8]._TipoDatoAddizionale.RegEx"
                     type="hidden" value="">
-                <div id="docAddizionale_0">
-                    <label id="doc">
-                        Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                    <p class="helper">E' possibile inserire file in formato PDF di massimo un 1MB<b>;</b></p>
-                    <input id="DocumentiPrenotante_0___Descrizione" name="DocumentiPrenotante[0]._Descrizione"
-                        type="hidden" value="Documento di identità/viaggio">
-                    <input id="File_0" name="DocumentiPrenotante[0]._File" onchange="controlloFileCaricato(this)"
-                        type="file" value="">
-                    <span class="field-validation-valid" data-valmsg-for="Lenght_0" data-valmsg-replace="true"
-                        style="color:red"></span>
-                    <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                        id="DocumentiPrenotante_0___Obbligatorio" name="DocumentiPrenotante[0]._Obbligatorio"
-                        type="hidden" value="True">
-                    <span class="field-validation-valid validator-required" data-valmsg-for="Required_0"
-                        data-valmsg-replace="true" style="color:red"></span>
-                    <span class="field-validation-valid validator-required" data-valmsg-for="Extension_0"
-                        data-valmsg-replace="true" style="color:red"></span>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="DocumentiPrenotante_0___Id"
-                        name="DocumentiPrenotante[0]._Id" type="hidden" value="9826">
+                <div id="datoaddizionale_9">
+                    <label id="addizionale">
+                        Luogo di nascita figlio minorenne </label>
+                    <input id="DatiAddizionaliPrenotante_9___Descrizione"
+                        name="DatiAddizionaliPrenotante[9]._Descrizione" type="hidden"
+                        value="Luogo di nascita figlio minorenne">
+                    <input id="DatiAddizionaliPrenotante_9___testo" maxlength="100"
+                        name="DatiAddizionaliPrenotante[9]._testo" onchange="ControlloTesto(this)" type="text"
+                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        id="DatiAddizionaliPrenotante_9___Obbligatorio"
+                        name="DatiAddizionaliPrenotante[9]._Obbligatorio" type="hidden" value="False">
+                    <div>
+                        <p><span class="field-validation-valid" data-valmsg-for="addizionale_9"
+                                data-valmsg-replace="true" style="color:red"></span></p>
+                        <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_9"
+                                data-valmsg-replace="true" style="color:red"></span></p>
+                    </div>
                 </div>
-                <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                    data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_0"
-                    name="DocumentiPrenotante[0]._TipoDocumento.IDTipoDocumento" type="hidden" value="4"><input
-                    id="hiddenFile_0" name="DocumentiPrenotante[0]._File" type="hidden" value="">
-                <div id="docAddizionale_1">
-                    <label id="doc">
-                        Passaporto </label>
-                    <p class="helper">E' possibile inserire file in formato PDF di massimo un 1MB<b>;</b></p>
-                    <input id="DocumentiPrenotante_1___Descrizione" name="DocumentiPrenotante[1]._Descrizione"
-                        type="hidden" value="Passaporto">
-                    <input id="File_1" name="DocumentiPrenotante[1]._File" onchange="controlloFileCaricato(this)"
-                        type="file" value="">
-                    <span class="field-validation-valid" data-valmsg-for="Lenght_1" data-valmsg-replace="true"
-                        style="color:red"></span>
-                    <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                        id="DocumentiPrenotante_1___Obbligatorio" name="DocumentiPrenotante[1]._Obbligatorio"
-                        type="hidden" value="False">
-                    <span class="field-validation-valid validator-required" data-valmsg-for="Required_1"
-                        data-valmsg-replace="true" style="color:red"></span>
-                    <span class="field-validation-valid validator-required" data-valmsg-for="Extension_1"
-                        data-valmsg-replace="true" style="color:red"></span>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="DocumentiPrenotante_1___Id"
-                        name="DocumentiPrenotante[1]._Id" type="hidden" value="9827">
+                <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                    data-val-required="The _Id field is required." id="hiddenId9"
+                    name="DatiAddizionaliPrenotante[9]._Id" type="hidden" value="42049"><input data-val="true"
+                    data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                    data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_9"
+                    name="DatiAddizionaliPrenotante[9]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
+                    value="14"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_9"
+                    name="DatiAddizionaliPrenotante[9]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
+                    value="2"><input id="hiddenRegEx_9" name="DatiAddizionaliPrenotante[9]._TipoDatoAddizionale.RegEx"
+                    type="hidden" value="">
+                <div id="datoaddizionale_10">
+                    <label id="addizionale">
+                        Nome e cognome altro genitore </label>
+                    <input id="DatiAddizionaliPrenotante_10___Descrizione"
+                        name="DatiAddizionaliPrenotante[10]._Descrizione" type="hidden"
+                        value="Nome e cognome altro genitore">
+                    <input id="DatiAddizionaliPrenotante_10___testo" maxlength="100"
+                        name="DatiAddizionaliPrenotante[10]._testo" onchange="ControlloTesto(this)" type="text"
+                        value=""><input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        id="DatiAddizionaliPrenotante_10___Obbligatorio"
+                        name="DatiAddizionaliPrenotante[10]._Obbligatorio" type="hidden" value="False">
+                    <div>
+                        <p><span class="field-validation-valid" data-valmsg-for="addizionale_10"
+                                data-valmsg-replace="true" style="color:red"></span></p>
+                        <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_10"
+                                data-valmsg-replace="true" style="color:red"></span></p>
+                    </div>
                 </div>
-                <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                    data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_1"
-                    name="DocumentiPrenotante[1]._TipoDocumento.IDTipoDocumento" type="hidden" value="1"><input
-                    id="hiddenFile_1" name="DocumentiPrenotante[1]._File" type="hidden" value=""> <input data-val="true"
+                <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                    data-val-required="The _Id field is required." id="hiddenId10"
+                    name="DatiAddizionaliPrenotante[10]._Id" type="hidden" value="42050"><input data-val="true"
+                    data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                    data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_10"
+                    name="DatiAddizionaliPrenotante[10]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
+                    value="16"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_10"
+                    name="DatiAddizionaliPrenotante[10]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
+                    value="2"><input id="hiddenRegEx_10" name="DatiAddizionaliPrenotante[10]._TipoDatoAddizionale.RegEx"
+                    type="hidden" value=""> <input data-val="true"
                     data-val-number="Il campo _idSelezionato deve essere un numero."
                     data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_1"
                     name="DatiAddizionaliPrenotante[1]._idSelezionato" type="hidden" value="0"><input data-val="true"
                     data-val-number="Il campo _idSelezionato deve essere un numero."
-                    data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_3"
-                    name="DatiAddizionaliPrenotante[3]._idSelezionato" type="hidden" value="0"><input data-val="true"
-                    data-val-number="Il campo _idSelezionato deve essere un numero."
-                    data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_5"
-                    name="DatiAddizionaliPrenotante[5]._idSelezionato" type="hidden" value="0"><input data-val="true"
-                    data-val-number="Il campo _idSelezionato deve essere un numero."
-                    data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_8"
-                    name="DatiAddizionaliPrenotante[8]._idSelezionato" type="hidden" value="0">
+                    data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_2"
+                    name="DatiAddizionaliPrenotante[2]._idSelezionato" type="hidden" value="0">
             </div>
 
             <div id="ifMultiple">
@@ -415,18 +423,18 @@ container.innerHTML = `
                     </div>
                     <div id="divCompanionAdd_0_0">
                         <label>
-                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
+                            Numero carta d'identità &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___Descrizione"
                             name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Indirizzo completo di residenza">
+                            value="Numero carta d&#39;identità">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="42051"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="25"><input data-val="true"
+                        type="hidden" value="7"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_0"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoControllo"
@@ -435,218 +443,124 @@ container.innerHTML = `
                         type="hidden" value="">
                     <div id="divCompanionAdd_0_1">
                         <label>
-                            Figli minorenni &nbsp;<b>*</b> </label>
+                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___Descrizione"
                             name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Figli minorenni">
+                            value="Indirizzo completo di residenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="42052"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="11"><input data-val="true"
+                        type="hidden" value="25"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_1"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_1"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_1"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_0_2">
                         <label>
-                            Numero figli minorenni &nbsp;<b>*</b> </label>
+                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___Descrizione"
                             name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Descrizione" type="hidden"
-                            value="Numero figli minorenni">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="12"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_2"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_0_3">
-                        <label>
-                            Stato civile &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
-                            value="Stato civile">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="17"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_3"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_0_4">
-                        <label>
-                            Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
-                            value="Nome e cognome coniuge / unito-a civilmente">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="18"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_4"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_0_5">
-                        <label>
-                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
                             value="In possesso di passaporto italiano scaduto/in scadenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="42053"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
                         type="hidden" value="1"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_5"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_2"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_0_6">
+                    <div id="divCompanionAdd_0_3">
                         <label>
-                            Numero di passaporto &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            Numero di passaporto </label>
+                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___Descrizione"
+                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
                             value="Numero di passaporto">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="42054"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="2"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_3"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_0_4">
+                        <label>
+                            Data di scadenza del passaporto (dd/mm/yyyy) </label>
+                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___Descrizione"
+                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
+                            value="Data di scadenza del passaporto (dd/mm/yyyy)">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="42055"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="5"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="1"><input id="hiddenRegExAcc_4"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_0_5">
+                        <label>
+                            Autorità che ha rilasciato il passaporto </label>
+                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___Descrizione"
+                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
+                            value="Autorità che ha rilasciato il passaporto">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="42056"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="4"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_5"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_0_6">
+                        <label>
+                            Stato civile &nbsp;<b>*</b> </label>
+                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___Descrizione"
+                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            value="Stato civile">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="42057"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="2"><input data-val="true"
+                        type="hidden" value="17"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_6"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_6"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_6"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_0_7">
-                        <label>
-                            Statura in cm &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._Descrizione" type="hidden"
-                            value="Statura in cm">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="22"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_7"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_7"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_0_8">
-                        <label>
-                            Colore degli occhi &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___Descrizione"
-                            name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._Descrizione" type="hidden"
-                            value="Colore degli occhi">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="23"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_8"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_8"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="docCompanionAdd_0_0">
-                        <label>
-                            Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_0__DocumentiAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Documento di identità/viaggio">
-                        <input id="Accompagnatori_0__DocumentiAccompagnatore_0___File"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_0_0" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_0__DocumentiAccompagnatore_0___Obbligatorio"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._Obbligatorio" type="hidden"
-                            value="True">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_0_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_0_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc0"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
-                        name="Accompagnatori[0].DocumentiAccompagnatore[0]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="4">
-                    <div id="docCompanionAdd_0_1">
-                        <label>
-                            Passaporto </label>
-                        <input id="Accompagnatori_0__DocumentiAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Passaporto">
-                        <input id="Accompagnatori_0__DocumentiAccompagnatore_1___File"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_0_1" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_0__DocumentiAccompagnatore_1___Obbligatorio"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._Obbligatorio" type="hidden"
-                            value="False">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_0_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_0_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc0"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
-                        name="Accompagnatori[0].DocumentiAccompagnatore[1]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="1">
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
                     id="hiddenParentela_0" name="Accompagnatori[0].IdTipoParentela" type="hidden" value="">
@@ -686,18 +600,18 @@ container.innerHTML = `
                     </div>
                     <div id="divCompanionAdd_1_0">
                         <label>
-                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
+                            Numero carta d'identità &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___Descrizione"
                             name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Indirizzo completo di residenza">
+                            value="Numero carta d&#39;identità">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="42051"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="25"><input data-val="true"
+                        type="hidden" value="7"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_0"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoControllo"
@@ -706,218 +620,124 @@ container.innerHTML = `
                         type="hidden" value="">
                     <div id="divCompanionAdd_1_1">
                         <label>
-                            Figli minorenni &nbsp;<b>*</b> </label>
+                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___Descrizione"
                             name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Figli minorenni">
+                            value="Indirizzo completo di residenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="42052"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="11"><input data-val="true"
+                        type="hidden" value="25"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_1"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_1"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_1"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_1_2">
                         <label>
-                            Numero figli minorenni &nbsp;<b>*</b> </label>
+                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___Descrizione"
                             name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Descrizione" type="hidden"
-                            value="Numero figli minorenni">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="12"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_2"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_1_3">
-                        <label>
-                            Stato civile &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
-                            value="Stato civile">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="17"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_3"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_1_4">
-                        <label>
-                            Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
-                            value="Nome e cognome coniuge / unito-a civilmente">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="18"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_4"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_1_5">
-                        <label>
-                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
                             value="In possesso di passaporto italiano scaduto/in scadenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="42053"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
                         type="hidden" value="1"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_5"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_2"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_1_6">
+                    <div id="divCompanionAdd_1_3">
                         <label>
-                            Numero di passaporto &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            Numero di passaporto </label>
+                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___Descrizione"
+                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
                             value="Numero di passaporto">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="42054"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="2"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_3"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_1_4">
+                        <label>
+                            Data di scadenza del passaporto (dd/mm/yyyy) </label>
+                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___Descrizione"
+                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
+                            value="Data di scadenza del passaporto (dd/mm/yyyy)">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="42055"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="5"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="1"><input id="hiddenRegExAcc_4"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_1_5">
+                        <label>
+                            Autorità che ha rilasciato il passaporto </label>
+                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___Descrizione"
+                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
+                            value="Autorità che ha rilasciato il passaporto">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="42056"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="4"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_5"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_1_6">
+                        <label>
+                            Stato civile &nbsp;<b>*</b> </label>
+                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___Descrizione"
+                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            value="Stato civile">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="42057"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="2"><input data-val="true"
+                        type="hidden" value="17"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_6"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_6"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_6"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_1_7">
-                        <label>
-                            Statura in cm &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._Descrizione" type="hidden"
-                            value="Statura in cm">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="22"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_7"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_7"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_1_8">
-                        <label>
-                            Colore degli occhi &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___Descrizione"
-                            name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._Descrizione" type="hidden"
-                            value="Colore degli occhi">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="23"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_8"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_8"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="docCompanionAdd_1_0">
-                        <label>
-                            Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_1__DocumentiAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Documento di identità/viaggio">
-                        <input id="Accompagnatori_1__DocumentiAccompagnatore_0___File"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_1_0" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_1__DocumentiAccompagnatore_0___Obbligatorio"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._Obbligatorio" type="hidden"
-                            value="True">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_1_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_1_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc1"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
-                        name="Accompagnatori[1].DocumentiAccompagnatore[0]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="4">
-                    <div id="docCompanionAdd_1_1">
-                        <label>
-                            Passaporto </label>
-                        <input id="Accompagnatori_1__DocumentiAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Passaporto">
-                        <input id="Accompagnatori_1__DocumentiAccompagnatore_1___File"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_1_1" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_1__DocumentiAccompagnatore_1___Obbligatorio"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._Obbligatorio" type="hidden"
-                            value="False">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_1_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_1_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc1"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
-                        name="Accompagnatori[1].DocumentiAccompagnatore[1]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="1">
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
                     id="hiddenParentela_1" name="Accompagnatori[1].IdTipoParentela" type="hidden" value="">
@@ -957,18 +777,18 @@ container.innerHTML = `
                     </div>
                     <div id="divCompanionAdd_2_0">
                         <label>
-                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
+                            Numero carta d'identità &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___Descrizione"
                             name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Indirizzo completo di residenza">
+                            value="Numero carta d&#39;identità">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="42051"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="25"><input data-val="true"
+                        type="hidden" value="7"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_0"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoControllo"
@@ -977,218 +797,124 @@ container.innerHTML = `
                         type="hidden" value="">
                     <div id="divCompanionAdd_2_1">
                         <label>
-                            Figli minorenni &nbsp;<b>*</b> </label>
+                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___Descrizione"
                             name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Figli minorenni">
+                            value="Indirizzo completo di residenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="42052"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="11"><input data-val="true"
+                        type="hidden" value="25"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_1"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_1"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_1"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_2_2">
                         <label>
-                            Numero figli minorenni &nbsp;<b>*</b> </label>
+                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___Descrizione"
                             name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Descrizione" type="hidden"
-                            value="Numero figli minorenni">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="12"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_2_3">
-                        <label>
-                            Stato civile &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
-                            value="Stato civile">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="17"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_3"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_2_4">
-                        <label>
-                            Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
-                            value="Nome e cognome coniuge / unito-a civilmente">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="18"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_4"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_2_5">
-                        <label>
-                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
                             value="In possesso di passaporto italiano scaduto/in scadenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="42053"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
                         type="hidden" value="1"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_5"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_2_6">
+                    <div id="divCompanionAdd_2_3">
                         <label>
-                            Numero di passaporto &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            Numero di passaporto </label>
+                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___Descrizione"
+                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
                             value="Numero di passaporto">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="42054"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="2"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_3"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_2_4">
+                        <label>
+                            Data di scadenza del passaporto (dd/mm/yyyy) </label>
+                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___Descrizione"
+                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
+                            value="Data di scadenza del passaporto (dd/mm/yyyy)">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="42055"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="5"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="1"><input id="hiddenRegExAcc_4"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_2_5">
+                        <label>
+                            Autorità che ha rilasciato il passaporto </label>
+                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___Descrizione"
+                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
+                            value="Autorità che ha rilasciato il passaporto">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="42056"><input
+                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="4"><input data-val="true"
+                        data-val-number="Il campo IDTipoControllo deve essere un numero."
+                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_5"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
+                        type="hidden" value="">
+                    <div id="divCompanionAdd_2_6">
+                        <label>
+                            Stato civile &nbsp;<b>*</b> </label>
+                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___Descrizione"
+                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
+                            value="Stato civile">
+                    </div>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="42057"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="2"><input data-val="true"
+                        type="hidden" value="17"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_6"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_6"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_6"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_2_7">
-                        <label>
-                            Statura in cm &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._Descrizione" type="hidden"
-                            value="Statura in cm">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="22"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_7"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_7"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_2_8">
-                        <label>
-                            Colore degli occhi &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___Descrizione"
-                            name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._Descrizione" type="hidden"
-                            value="Colore degli occhi">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="23"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_8"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_8"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="docCompanionAdd_2_0">
-                        <label>
-                            Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_2__DocumentiAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Documento di identità/viaggio">
-                        <input id="Accompagnatori_2__DocumentiAccompagnatore_0___File"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_2_0" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_2__DocumentiAccompagnatore_0___Obbligatorio"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._Obbligatorio" type="hidden"
-                            value="True">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_2_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_2_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc2"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
-                        name="Accompagnatori[2].DocumentiAccompagnatore[0]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="4">
-                    <div id="docCompanionAdd_2_1">
-                        <label>
-                            Passaporto </label>
-                        <input id="Accompagnatori_2__DocumentiAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Passaporto">
-                        <input id="Accompagnatori_2__DocumentiAccompagnatore_1___File"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_2_1" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_2__DocumentiAccompagnatore_1___Obbligatorio"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._Obbligatorio" type="hidden"
-                            value="False">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_2_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_2_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc2"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
-                        name="Accompagnatori[2].DocumentiAccompagnatore[1]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="1">
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
                     id="hiddenParentela_2" name="Accompagnatori[2].IdTipoParentela" type="hidden" value="">
@@ -1228,18 +954,18 @@ container.innerHTML = `
                     </div>
                     <div id="divCompanionAdd_3_0">
                         <label>
-                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
+                            Numero carta d'identità &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Indirizzo completo di residenza">
+                            value="Numero carta d&#39;identità">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="42051"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="25"><input data-val="true"
+                        type="hidden" value="7"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_0"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoControllo"
@@ -1248,492 +974,127 @@ container.innerHTML = `
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_1">
                         <label>
-                            Figli minorenni &nbsp;<b>*</b> </label>
+                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Figli minorenni">
+                            value="Indirizzo completo di residenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="42052"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="11"><input data-val="true"
+                        type="hidden" value="25"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_1"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_1"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_1"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_2">
                         <label>
-                            Numero figli minorenni &nbsp;<b>*</b> </label>
+                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Descrizione" type="hidden"
-                            value="Numero figli minorenni">
+                            value="In possesso di passaporto italiano scaduto/in scadenza">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="42053"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="12"><input data-val="true"
+                        type="hidden" value="1"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_2"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_2"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_3">
                         <label>
-                            Stato civile &nbsp;<b>*</b> </label>
+                            Numero di passaporto </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
-                            value="Stato civile">
+                            value="Numero di passaporto">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="42054"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="17"><input data-val="true"
+                        type="hidden" value="2"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_3"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_3"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_4">
                         <label>
-                            Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
+                            Data di scadenza del passaporto (dd/mm/yyyy) </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
-                            value="Nome e cognome coniuge / unito-a civilmente">
+                            value="Data di scadenza del passaporto (dd/mm/yyyy)">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="42055"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="18"><input data-val="true"
+                        type="hidden" value="5"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_4"
+                        type="hidden" value="1"><input id="hiddenRegExAcc_4"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_5">
                         <label>
-                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
+                            Autorità che ha rilasciato il passaporto </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
-                            value="In possesso di passaporto italiano scaduto/in scadenza">
+                            value="Autorità che ha rilasciato il passaporto">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="42056"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="1"><input data-val="true"
+                        type="hidden" value="4"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_5"
+                        type="hidden" value="2"><input id="hiddenRegExAcc_5"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
                     <div id="divCompanionAdd_3_6">
                         <label>
-                            Numero di passaporto &nbsp;<b>*</b> </label>
+                            Stato civile &nbsp;<b>*</b> </label>
                         <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___Descrizione"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
-                            value="Numero di passaporto">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="2"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_6"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_6"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_3_7">
-                        <label>
-                            Statura in cm &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___Descrizione"
-                            name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._Descrizione" type="hidden"
-                            value="Statura in cm">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="22"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_7"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_7"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_3_8">
-                        <label>
-                            Colore degli occhi &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___Descrizione"
-                            name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._Descrizione" type="hidden"
-                            value="Colore degli occhi">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="23"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_8"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_8"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="docCompanionAdd_3_0">
-                        <label>
-                            Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_3__DocumentiAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Documento di identità/viaggio">
-                        <input id="Accompagnatori_3__DocumentiAccompagnatore_0___File"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_3_0" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_3__DocumentiAccompagnatore_0___Obbligatorio"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._Obbligatorio" type="hidden"
-                            value="True">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_3_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_3_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc3"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
-                        name="Accompagnatori[3].DocumentiAccompagnatore[0]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="4">
-                    <div id="docCompanionAdd_3_1">
-                        <label>
-                            Passaporto </label>
-                        <input id="Accompagnatori_3__DocumentiAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Passaporto">
-                        <input id="Accompagnatori_3__DocumentiAccompagnatore_1___File"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_3_1" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_3__DocumentiAccompagnatore_1___Obbligatorio"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._Obbligatorio" type="hidden"
-                            value="False">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_3_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_3_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc3"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
-                        name="Accompagnatori[3].DocumentiAccompagnatore[1]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="1">
-                </div>
-                <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
-                    id="hiddenParentela_3" name="Accompagnatori[3].IdTipoParentela" type="hidden" value="">
-                <div id="divCompanion_4" style="display: none;">
-                    <h2>Dati richiedente aggiuntivo 5</h2>
-                    <div>
-                        Cognome *
-                        <input class="text-box single-line" id="Accompagnatori_4__CognomeAccompagnatore"
-                            name="Accompagnatori[4].CognomeAccompagnatore" onkeyup="aggiornaElencoPrenotanti()"
-                            type="text" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Surname4" data-valmsg-replace="true"
-                            style="color:red"></span>
-                    </div>
-                    <div>
-                        Nome *
-                        <input class="text-box single-line" id="Accompagnatori_4__NomeAccompagnatore"
-                            name="Accompagnatori[4].NomeAccompagnatore" onkeyup="aggiornaElencoPrenotanti()" type="text"
-                            value="">
-                        <span class="field-validation-valid" data-valmsg-for="Name4" data-valmsg-replace="true"
-                            style="color:red"></span>
-                    </div>
-                    <div>
-                        Data di nascita *
-                        <input class="text-box single-line" data-val="true"
-                            data-val-date="Il campo DataNascitaAccompagnatore deve essere una data."
-                            id="Accompagnatori_4__DataNascitaAccompagnatore"
-                            name="Accompagnatori[4].DataNascitaAccompagnatore" type="date" value="">
-                    </div>
-                    <div>
-                        <span class="field-validation-valid" data-valmsg-for="Date4" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <span class="field-validation-valid" data-valmsg-for="dateRange4" data-valmsg-replace="true"
-                            style="color:red"></span>
-                    </div>
-                    Relazione di parentela
-                    <div id="ddlRelation_4">
-                    </div>
-                    <div id="divCompanionAdd_4_0">
-                        <label>
-                            Indirizzo completo di residenza &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Indirizzo completo di residenza">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="25"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_0"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_0"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_1">
-                        <label>
-                            Figli minorenni &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Figli minorenni">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="11"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_1"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_1"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_2">
-                        <label>
-                            Numero figli minorenni &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._Descrizione" type="hidden"
-                            value="Numero figli minorenni">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="12"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_2"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_2"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_3">
-                        <label>
-                            Stato civile &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._Descrizione" type="hidden"
                             value="Stato civile">
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="17"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_3"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_3"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_4">
-                        <label>
-                            Nome e cognome coniuge / unito-a civilmente &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._Descrizione" type="hidden"
-                            value="Nome e cognome coniuge / unito-a civilmente">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="18"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_5">
-                        <label>
-                            In possesso di passaporto italiano scaduto/in scadenza &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._Descrizione" type="hidden"
-                            value="In possesso di passaporto italiano scaduto/in scadenza">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="1"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_5"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_5"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_6">
-                        <label>
-                            Numero di passaporto &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._Descrizione" type="hidden"
-                            value="Numero di passaporto">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        data-val-required="The _Id field is required." id="hiddenIdAcc3"
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="42057"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="2"><input data-val="true"
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
+                        type="hidden" value="17"><input data-val="true"
                         data-val-number="Il campo IDTipoControllo deve essere un numero."
                         data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_6"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_6"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoControllo"
+                        type="hidden" value="3"><input id="hiddenRegExAcc_6"
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.RegEx"
                         type="hidden" value="">
-                    <div id="divCompanionAdd_4_7">
-                        <label>
-                            Statura in cm &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._Descrizione" type="hidden"
-                            value="Statura in cm">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="22"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_7"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="2"><input id="hiddenRegExAcc_7"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="divCompanionAdd_4_8">
-                        <label>
-                            Colore degli occhi &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___Descrizione"
-                            name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._Descrizione" type="hidden"
-                            value="Colore degli occhi">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                        data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
-                        data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
-                        data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
-                        type="hidden" value="23"><input data-val="true"
-                        data-val-number="Il campo IDTipoControllo deve essere un numero."
-                        data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAddAcc_8"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoControllo"
-                        type="hidden" value="3"><input id="hiddenRegExAcc_8"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.RegEx"
-                        type="hidden" value="">
-                    <div id="docCompanionAdd_4_0">
-                        <label>
-                            Documento di identità/viaggio &nbsp;<b>*</b> </label>
-                        <input id="Accompagnatori_4__DocumentiAccompagnatore_0___Descrizione"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._Descrizione" type="hidden"
-                            value="Documento di identità/viaggio">
-                        <input id="Accompagnatori_4__DocumentiAccompagnatore_0___File"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_4_0" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_4__DocumentiAccompagnatore_0___Obbligatorio"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._Obbligatorio" type="hidden"
-                            value="True">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_4_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_4_0"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc4"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
-                        name="Accompagnatori[4].DocumentiAccompagnatore[0]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="4">
-                    <div id="docCompanionAdd_4_1">
-                        <label>
-                            Passaporto </label>
-                        <input id="Accompagnatori_4__DocumentiAccompagnatore_1___Descrizione"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._Descrizione" type="hidden"
-                            value="Passaporto">
-                        <input id="Accompagnatori_4__DocumentiAccompagnatore_1___File"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._File"
-                            onchange="controlloFileCaricato(this)" type="file" value="">
-                        <span class="field-validation-valid" data-valmsg-for="Lenght_4_1" data-valmsg-replace="true"
-                            style="color:red"></span>
-                        <input data-val="true" data-val-required="The _Obbligatorio field is required."
-                            id="Accompagnatori_4__DocumentiAccompagnatore_1___Obbligatorio"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._Obbligatorio" type="hidden"
-                            value="False">
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Required_4_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <span class="field-validation-valid validator-required" data-valmsg-for="Extension_4_1"
-                            data-valmsg-replace="true" style="color:red"></span>
-                        <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
-                            data-val-required="The _Id field is required." id="hiddenIdDoc4"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
-                    </div>
-                    <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
-                        data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
-                        name="Accompagnatori[4].DocumentiAccompagnatore[1]._TipoDocumento.IDTipoDocumento" type="hidden"
-                        value="1">
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
-                    id="hiddenParentela_4" name="Accompagnatori[4].IdTipoParentela" type="hidden" value="">
+                    id="hiddenParentela_3" name="Accompagnatori[3].IdTipoParentela" type="hidden" value="">
             </div>
         </div>
         <div>
@@ -1793,23 +1154,23 @@ container.innerHTML = `
 
 //Scripts...
 var numDivCompanionsVisibile = 0;
+//Do not wait to load
 //$(document).ready(function () {
-    $('#ServizioDescrizione').text($('#hiddenServizioDesc').val());
-    getTypeofBooking();
-    ShowInfoApplicant();
-    getDatiAddizionali();
+$('#ServizioDescrizione').text($('#hiddenServizioDesc').val());
+getTypeofBooking();
+ShowInfoApplicant();
+getDatiAddizionali();
 
-    $('#ddlnumberofcompanions').val(0);
-    var x = 0;
-    if (x !== 0) {
-        CreateDivCompanion(x);
-    }
+$('#ddlnumberofcompanions').val(0);
+var x = 0;
+if (x !== 0) {
+    CreateDivCompanion(x);
+}
 
-//});
+//}); //Do not wait to load
 
 function aggiornaDettaglioPrenotazione() {
     $('#divRiepilogoPrenotazione').hide();
-
 
     aggiornaElencoPrenotanti();
 
@@ -1818,16 +1179,17 @@ function aggiornaDettaglioPrenotazione() {
 
 function aggiornaElencoPrenotanti() {
     let name = '';
-    $('figure.main-nav__avatar').each(function( key, value ) {
+    $('figure.main-nav__avatar').each(function (key, value) {
         name = $(this).find('figcaption').html();
     });
     console.log(name);
-    
+
     $('#divRiepilogoPrenotazione > #divTitolo').text($("#typeofbookingddl option:selected").text());
     switch ($('#typeofbookingddl').val()) {
         case '1':
-            $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n  You are booking for   " + 1 + " Appointment");
-            
+            $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n  Stai prenotando per   " + 1 +
+                " Appuntamento");
+
 
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').empty();
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + name + '</li>')
@@ -1836,37 +1198,45 @@ function aggiornaElencoPrenotanti() {
         case '2':
             var numapp = parseInt($('#ddlnumberofcompanions').val()) + 1;
             if (numapp == 1) {
-                    $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n You are booking for  " + numapp + " Appointment");
-                
+                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n Stai prenotando per  " + numapp +
+                    " Appuntamento");
+
             } else {
-                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n You are booking for  " + numapp + " Appointments");
-                
+                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n Stai prenotando per  " + numapp +
+                    " Appuntamenti");
+
             }
 
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').empty();
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + name + '</li>');
             for (var i = 0; i < parseInt($('#ddlnumberofcompanions').val()); i++) {
-                $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + $('#Accompagnatori_' + i + '__CognomeAccompagnatore').val() + ' ' + $('#Accompagnatori_' + i + '__NomeAccompagnatore').val() + '</li>');
+                $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + $('#Accompagnatori_' +
+                    i + '__CognomeAccompagnatore').val() + ' ' + $('#Accompagnatori_' + i +
+                    '__NomeAccompagnatore').val() + '</li>');
             }
 
             break;
             //Model.PrenotazioneSenzaRichiedente &&
         case '3':
-                var numapp = $('#ddlnumberofcompanions').val();
+            var numapp = $('#ddlnumberofcompanions').val();
             if (numapp == 1) {
-                    $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n You are booking for  " + numapp + " Appointment");
-                
+                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n Stai prenotando per  " + numapp +
+                    " Appuntamento");
+
             } else {
-                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n You are booking for  " + numapp + " Appointments");
-                
+                $('#divRiepilogoPrenotazione > #divDettaglio').html("\n\n Stai prenotando per  " + numapp +
+                    " Appuntamenti");
+
             }
 
             $('#divRiepilogoPrenotazione > #divAppuntamenti ul').empty();
-                
-                for (var i = 0; i < parseInt($('#ddlnumberofcompanions').val()); i++) {
-                    $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + $('#Accompagnatori_' + i + '__CognomeAccompagnatore').val() + ' ' + $('#Accompagnatori_' + i + '__NomeAccompagnatore').val()+'</li>')
-                }
-                
+
+            for (var i = 0; i < parseInt($('#ddlnumberofcompanions').val()); i++) {
+                $('#divRiepilogoPrenotazione > #divAppuntamenti ul').append('\n<li>' + $('#Accompagnatori_' +
+                    i + '__CognomeAccompagnatore').val() + ' ' + $('#Accompagnatori_' + i +
+                    '__NomeAccompagnatore').val() + '</li>')
+            }
+
             break;
     }
 }
@@ -2114,38 +1484,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 0).append(
                 '<input id="DatiAddizionaliPrenotante_0___testo" maxlength="100" name="DatiAddizionaliPrenotante[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 0).append(
                 '<input id="DatiAddizionaliPrenotante_0___testo" name="DatiAddizionaliPrenotante[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 0).append(
                 '<input id="DatiAddizionaliPrenotante_0___testo" maxlength="100" name="DatiAddizionaliPrenotante[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 0).append(
                 '<input id="DatiAddizionaliPrenotante_0___testo" name="DatiAddizionaliPrenotante[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_0___data" name="DatiAddizionaliPrenotante[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_0___data" name="DatiAddizionaliPrenotante[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_0___data" name="DatiAddizionaliPrenotante[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_0___data" name="DatiAddizionaliPrenotante[0]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2160,16 +1530,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_0" name="DatiAddizionaliPrenotante[0]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 0).val(), $('#ddls_0'), 0);
     }
 
     $('#datoaddizionale_' + 0).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_0___Obbligatorio" name="DatiAddizionaliPrenotante[0]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
     $('#datoaddizionale_' + 0).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2178,38 +1548,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 1).append(
                 '<input id="DatiAddizionaliPrenotante_1___testo" maxlength="100" name="DatiAddizionaliPrenotante[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 1).append(
                 '<input id="DatiAddizionaliPrenotante_1___testo" name="DatiAddizionaliPrenotante[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 1).append(
                 '<input id="DatiAddizionaliPrenotante_1___testo" maxlength="100" name="DatiAddizionaliPrenotante[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 1).append(
                 '<input id="DatiAddizionaliPrenotante_1___testo" name="DatiAddizionaliPrenotante[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_1___data" name="DatiAddizionaliPrenotante[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_1___data" name="DatiAddizionaliPrenotante[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_1___data" name="DatiAddizionaliPrenotante[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_1___data" name="DatiAddizionaliPrenotante[1]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2224,16 +1594,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_1" name="DatiAddizionaliPrenotante[1]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 1).val(), $('#ddls_1'), 0);
     }
 
     $('#datoaddizionale_' + 1).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_1___Obbligatorio" name="DatiAddizionaliPrenotante[1]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
     $('#datoaddizionale_' + 1).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2242,38 +1612,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 2).append(
                 '<input id="DatiAddizionaliPrenotante_2___testo" maxlength="100" name="DatiAddizionaliPrenotante[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 2).append(
                 '<input id="DatiAddizionaliPrenotante_2___testo" name="DatiAddizionaliPrenotante[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 2).append(
                 '<input id="DatiAddizionaliPrenotante_2___testo" maxlength="100" name="DatiAddizionaliPrenotante[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 2).append(
                 '<input id="DatiAddizionaliPrenotante_2___testo" name="DatiAddizionaliPrenotante[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_2___data" name="DatiAddizionaliPrenotante[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_2___data" name="DatiAddizionaliPrenotante[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_2___data" name="DatiAddizionaliPrenotante[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_2___data" name="DatiAddizionaliPrenotante[2]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2288,16 +1658,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_2" name="DatiAddizionaliPrenotante[2]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 2).val(), $('#ddls_2'), 0);
     }
 
     $('#datoaddizionale_' + 2).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_2___Obbligatorio" name="DatiAddizionaliPrenotante[2]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
     $('#datoaddizionale_' + 2).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2306,38 +1676,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 3).append(
                 '<input id="DatiAddizionaliPrenotante_3___testo" maxlength="100" name="DatiAddizionaliPrenotante[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 3).append(
                 '<input id="DatiAddizionaliPrenotante_3___testo" name="DatiAddizionaliPrenotante[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 3).append(
                 '<input id="DatiAddizionaliPrenotante_3___testo" maxlength="100" name="DatiAddizionaliPrenotante[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 3).append(
                 '<input id="DatiAddizionaliPrenotante_3___testo" name="DatiAddizionaliPrenotante[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_3___data" name="DatiAddizionaliPrenotante[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_3___data" name="DatiAddizionaliPrenotante[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_3___data" name="DatiAddizionaliPrenotante[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_3___data" name="DatiAddizionaliPrenotante[3]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2352,16 +1722,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_3" name="DatiAddizionaliPrenotante[3]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 3).val(), $('#ddls_3'), 0);
     }
 
     $('#datoaddizionale_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_3___Obbligatorio" name="DatiAddizionaliPrenotante[3]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_3___Obbligatorio" name="DatiAddizionaliPrenotante[3]._Obbligatorio" type="hidden" value="False" />'
+    );
     $('#datoaddizionale_' + 3).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2370,38 +1740,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 4).append(
                 '<input id="DatiAddizionaliPrenotante_4___testo" maxlength="100" name="DatiAddizionaliPrenotante[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 4).append(
                 '<input id="DatiAddizionaliPrenotante_4___testo" name="DatiAddizionaliPrenotante[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 4).append(
                 '<input id="DatiAddizionaliPrenotante_4___testo" maxlength="100" name="DatiAddizionaliPrenotante[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 4).append(
                 '<input id="DatiAddizionaliPrenotante_4___testo" name="DatiAddizionaliPrenotante[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_4___data" name="DatiAddizionaliPrenotante[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_4___data" name="DatiAddizionaliPrenotante[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_4___data" name="DatiAddizionaliPrenotante[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_4___data" name="DatiAddizionaliPrenotante[4]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2416,16 +1786,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_4" name="DatiAddizionaliPrenotante[4]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 4).val(), $('#ddls_4'), 0);
     }
 
     $('#datoaddizionale_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_4___Obbligatorio" name="DatiAddizionaliPrenotante[4]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_4___Obbligatorio" name="DatiAddizionaliPrenotante[4]._Obbligatorio" type="hidden" value="False" />'
+    );
     $('#datoaddizionale_' + 4).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2434,38 +1804,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 5).append(
                 '<input id="DatiAddizionaliPrenotante_5___testo" maxlength="100" name="DatiAddizionaliPrenotante[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 5).append(
                 '<input id="DatiAddizionaliPrenotante_5___testo" name="DatiAddizionaliPrenotante[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 5).append(
                 '<input id="DatiAddizionaliPrenotante_5___testo" maxlength="100" name="DatiAddizionaliPrenotante[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 5).append(
                 '<input id="DatiAddizionaliPrenotante_5___testo" name="DatiAddizionaliPrenotante[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_5___data" name="DatiAddizionaliPrenotante[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_5___data" name="DatiAddizionaliPrenotante[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_5___data" name="DatiAddizionaliPrenotante[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_5___data" name="DatiAddizionaliPrenotante[5]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2480,16 +1850,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_5" name="DatiAddizionaliPrenotante[5]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 5).val(), $('#ddls_5'), 0);
     }
 
     $('#datoaddizionale_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_5___Obbligatorio" name="DatiAddizionaliPrenotante[5]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_5___Obbligatorio" name="DatiAddizionaliPrenotante[5]._Obbligatorio" type="hidden" value="False" />'
+    );
     $('#datoaddizionale_' + 5).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_5" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2498,38 +1868,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 6).append(
                 '<input id="DatiAddizionaliPrenotante_6___testo" maxlength="100" name="DatiAddizionaliPrenotante[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 6).append(
                 '<input id="DatiAddizionaliPrenotante_6___testo" name="DatiAddizionaliPrenotante[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 6).append(
                 '<input id="DatiAddizionaliPrenotante_6___testo" maxlength="100" name="DatiAddizionaliPrenotante[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 6).append(
                 '<input id="DatiAddizionaliPrenotante_6___testo" name="DatiAddizionaliPrenotante[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_6___data" name="DatiAddizionaliPrenotante[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_6___data" name="DatiAddizionaliPrenotante[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_6___data" name="DatiAddizionaliPrenotante[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_6___data" name="DatiAddizionaliPrenotante[6]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2544,16 +1914,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_6" name="DatiAddizionaliPrenotante[6]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 6).val(), $('#ddls_6'), 0);
     }
 
     $('#datoaddizionale_' + 6).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_6___Obbligatorio" name="DatiAddizionaliPrenotante[6]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
     $('#datoaddizionale_' + 6).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_6" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2562,38 +1932,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 7).append(
                 '<input id="DatiAddizionaliPrenotante_7___testo" maxlength="100" name="DatiAddizionaliPrenotante[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 7).append(
                 '<input id="DatiAddizionaliPrenotante_7___testo" name="DatiAddizionaliPrenotante[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 7).append(
                 '<input id="DatiAddizionaliPrenotante_7___testo" maxlength="100" name="DatiAddizionaliPrenotante[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 7).append(
                 '<input id="DatiAddizionaliPrenotante_7___testo" name="DatiAddizionaliPrenotante[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 7).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_7___data" name="DatiAddizionaliPrenotante[7]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 7).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_7___data" name="DatiAddizionaliPrenotante[7]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 7).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_7___data" name="DatiAddizionaliPrenotante[7]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 7).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_7___data" name="DatiAddizionaliPrenotante[7]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2608,16 +1978,16 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_7" name="DatiAddizionaliPrenotante[7]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 7).val(), $('#ddls_7'), 0);
     }
 
     $('#datoaddizionale_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_7___Obbligatorio" name="DatiAddizionaliPrenotante[7]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_7___Obbligatorio" name="DatiAddizionaliPrenotante[7]._Obbligatorio" type="hidden" value="False" />'
+    );
     $('#datoaddizionale_' + 7).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_7" data-valmsg-replace="true" style="color:red"></span></p> </div >'
-        );
+    );
 
     RegEx = true;
     MaxLength = false
@@ -2626,38 +1996,38 @@ function getDatiAddizionali() {
         if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 8).append(
                 '<input id="DatiAddizionaliPrenotante_8___testo" maxlength="100" name="DatiAddizionaliPrenotante[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 8).append(
                 '<input id="DatiAddizionaliPrenotante_8___testo" name="DatiAddizionaliPrenotante[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 8).append(
                 '<input id="DatiAddizionaliPrenotante_8___testo" maxlength="100" name="DatiAddizionaliPrenotante[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 8).append(
                 '<input id="DatiAddizionaliPrenotante_8___testo" name="DatiAddizionaliPrenotante[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#datoaddizionale_' + 8).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_8___data" name="DatiAddizionaliPrenotante[8]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#datoaddizionale_' + 8).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_8___data" name="DatiAddizionaliPrenotante[8]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#datoaddizionale_' + 8).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_8___data" name="DatiAddizionaliPrenotante[8]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#datoaddizionale_' + 8).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_8___data" name="DatiAddizionaliPrenotante[8]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2672,16 +2042,144 @@ function getDatiAddizionali() {
         }));
         $('#infoapplicant').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_8" name="DatiAddizionaliPrenotante[8]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADD_' + 8).val(), $('#ddls_8'), 0);
     }
 
     $('#datoaddizionale_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_8___Obbligatorio" name="DatiAddizionaliPrenotante[8]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_8___Obbligatorio" name="DatiAddizionaliPrenotante[8]._Obbligatorio" type="hidden" value="False" />'
+    );
     $('#datoaddizionale_' + 8).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_8" data-valmsg-replace="true" style="color:red"></span></p> </div >'
+    );
+
+    RegEx = true;
+    MaxLength = false
+    var tipodatoAddizionale = $('#hiddenCodDatoAdd_' + 9).val();
+    if (tipodatoAddizionale == 2) {
+        if (RegEx == false && MaxLength == false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input id="DatiAddizionaliPrenotante_9___testo" maxlength="100" name="DatiAddizionaliPrenotante[9]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
+            );
+        } else if (RegEx == false && MaxLength != false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input id="DatiAddizionaliPrenotante_9___testo" name="DatiAddizionaliPrenotante[9]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
+            );
+        } else if (RegEx != false && MaxLength == false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input id="DatiAddizionaliPrenotante_9___testo" maxlength="100" name="DatiAddizionaliPrenotante[9]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
+            );
+        } else if (RegEx != false && MaxLength != false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input id="DatiAddizionaliPrenotante_9___testo" name="DatiAddizionaliPrenotante[9]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
+            );
+        }
+    }
+    if (tipodatoAddizionale == 1) {
+        if (RegEx != false && MaxLength != false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_9___data" name="DatiAddizionaliPrenotante[9]._data" type="date" value="" />'
+            );
+        } else if (RegEx != false && MaxLength == false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_9___data" name="DatiAddizionaliPrenotante[9]._data" type="date" value="" />'
+            );
+        } else if (RegEx == false && MaxLength != false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_9___data" name="DatiAddizionaliPrenotante[9]._data" type="date" value="" />'
+            );
+        } else if (RegEx == false && MaxLength == false) {
+            $('#datoaddizionale_' + 9).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_9___data" name="DatiAddizionaliPrenotante[9]._data" type="date" value="" />'
+            );
+        }
+    }
+    if (tipodatoAddizionale == 3) {
+        $('#datoaddizionale_' + 9).append($('<select/>', {
+            id: "ddls_" + 9,
+            'data-index': 9,
+            onchange: "ControloSelect(this)"
+        }));
+        $('#ddls_' + 9).append($('<option/>', {
+            value: 0,
+            text: " "
+        }));
+        $('#infoapplicant').append(
+            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_9" name="DatiAddizionaliPrenotante[9]._idSelezionato" type="hidden" value="0" />'
         );
+        getDropDownListsValues($('#hiddenIdDatoADD_' + 9).val(), $('#ddls_9'), 0);
+    }
+
+    $('#datoaddizionale_' + 9).append(
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_9___Obbligatorio" name="DatiAddizionaliPrenotante[9]._Obbligatorio" type="hidden" value="False" />'
+    );
+    $('#datoaddizionale_' + 9).append(
+        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_9" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_9" data-valmsg-replace="true" style="color:red"></span></p> </div >'
+    );
+
+    RegEx = true;
+    MaxLength = false
+    var tipodatoAddizionale = $('#hiddenCodDatoAdd_' + 10).val();
+    if (tipodatoAddizionale == 2) {
+        if (RegEx == false && MaxLength == false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input id="DatiAddizionaliPrenotante_10___testo" maxlength="100" name="DatiAddizionaliPrenotante[10]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
+            );
+        } else if (RegEx == false && MaxLength != false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input id="DatiAddizionaliPrenotante_10___testo" name="DatiAddizionaliPrenotante[10]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
+            );
+        } else if (RegEx != false && MaxLength == false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input id="DatiAddizionaliPrenotante_10___testo" maxlength="100" name="DatiAddizionaliPrenotante[10]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
+            );
+        } else if (RegEx != false && MaxLength != false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input id="DatiAddizionaliPrenotante_10___testo" name="DatiAddizionaliPrenotante[10]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
+            );
+        }
+    }
+    if (tipodatoAddizionale == 1) {
+        if (RegEx != false && MaxLength != false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_10___data" name="DatiAddizionaliPrenotante[10]._data" type="date" value="" />'
+            );
+        } else if (RegEx != false && MaxLength == false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_10___data" name="DatiAddizionaliPrenotante[10]._data" type="date" value="" />'
+            );
+        } else if (RegEx == false && MaxLength != false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_10___data" name="DatiAddizionaliPrenotante[10]._data" type="date" value="" />'
+            );
+        } else if (RegEx == false && MaxLength == false) {
+            $('#datoaddizionale_' + 10).append(
+                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="DatiAddizionaliPrenotante_10___data" name="DatiAddizionaliPrenotante[10]._data" type="date" value="" />'
+            );
+        }
+    }
+    if (tipodatoAddizionale == 3) {
+        $('#datoaddizionale_' + 10).append($('<select/>', {
+            id: "ddls_" + 10,
+            'data-index': 10,
+            onchange: "ControloSelect(this)"
+        }));
+        $('#ddls_' + 10).append($('<option/>', {
+            value: 0,
+            text: " "
+        }));
+        $('#infoapplicant').append(
+            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionato_10" name="DatiAddizionaliPrenotante[10]._idSelezionato" type="hidden" value="0" />'
+        );
+        getDropDownListsValues($('#hiddenIdDatoADD_' + 10).val(), $('#ddls_10'), 0);
+    }
+
+    $('#datoaddizionale_' + 10).append(
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="DatiAddizionaliPrenotante_10___Obbligatorio" name="DatiAddizionaliPrenotante[10]._Obbligatorio" type="hidden" value="False" />'
+    );
+    $('#datoaddizionale_' + 10).append(
+        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_10" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_10" data-valmsg-replace="true" style="color:red"></span></p> </div >'
+    );
 }
 
 function GetDatiAddizionaliAccompagnatori() {
@@ -2695,38 +2193,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2741,17 +2239,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_0" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 0).val(), $('#ddlsAcc_0' + '_0'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 0).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 0).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_0" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 1).val();
@@ -2761,38 +2259,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2807,17 +2305,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_1" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 1).val(), $('#ddlsAcc_0' + '_1'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 1).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 1).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_1" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 2).val();
@@ -2827,38 +2325,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2873,17 +2371,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_2" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 2).val(), $('#ddlsAcc_0' + '_2'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 2).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_2___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 2).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_2" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 3).val();
@@ -2893,38 +2391,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -2939,17 +2437,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_3" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 3).val(), $('#ddlsAcc_0' + '_3'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 3).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_3" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 4).val();
@@ -2959,38 +2457,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3005,17 +2503,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_4" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 4).val(), $('#ddlsAcc_0' + '_4'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 4).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_4" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 5).val();
@@ -3025,38 +2523,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3071,17 +2569,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_5" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 5).val(), $('#ddlsAcc_0' + '_5'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 5).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_5" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 6).val();
@@ -3091,38 +2589,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 0 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3137,149 +2635,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_6" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 6).val(), $('#ddlsAcc_0' + '_6'), 0);
     }
 
     $('#divCompanionAdd_' + 0 + '_' + 6).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_6___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 0 + '_' + 6).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_6" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 7).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 0 + '_' + 7).append($('<select/>', {
-            id: "ddlsAcc_0" + '_7',
-            'data-index': 7,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_0' + '_7').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_7" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 7).val(), $('#ddlsAcc_0' + '_7'), 0);
-    }
-
-    $('#divCompanionAdd_' + 0 + '_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_7___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 0 + '_' + 7).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_7" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 8).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 0 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 0 + '_' + 8).append($('<select/>', {
-            id: "ddlsAcc_0" + '_8',
-            'data-index': 8,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_0' + '_8').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_0_8" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 8).val(), $('#ddlsAcc_0' + '_8'), 0);
-    }
-
-    $('#divCompanionAdd_' + 0 + '_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_0__DatiAddizionaliAccompagnatore_8___Obbligatorio" name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 0 + '_' + 8).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_0_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_0_8" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 0).val();
@@ -3289,38 +2655,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3335,17 +2701,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_0" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 0).val(), $('#ddlsAcc_1' + '_0'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 0).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 0).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_0" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 1).val();
@@ -3355,38 +2721,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3401,17 +2767,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_1" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 1).val(), $('#ddlsAcc_1' + '_1'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 1).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 1).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_1" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 2).val();
@@ -3421,38 +2787,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3467,17 +2833,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_2" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 2).val(), $('#ddlsAcc_1' + '_2'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 2).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_2___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 2).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_2" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 3).val();
@@ -3487,38 +2853,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3533,17 +2899,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_3" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 3).val(), $('#ddlsAcc_1' + '_3'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 3).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_3" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 4).val();
@@ -3553,38 +2919,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3599,17 +2965,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_4" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 4).val(), $('#ddlsAcc_1' + '_4'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 4).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_4" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 5).val();
@@ -3619,38 +2985,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3665,17 +3031,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_5" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 5).val(), $('#ddlsAcc_1' + '_5'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 5).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_5" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 6).val();
@@ -3685,38 +3051,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 1 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3731,149 +3097,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_6" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 6).val(), $('#ddlsAcc_1' + '_6'), 0);
     }
 
     $('#divCompanionAdd_' + 1 + '_' + 6).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_6___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 1 + '_' + 6).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_6" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 7).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 1 + '_' + 7).append($('<select/>', {
-            id: "ddlsAcc_1" + '_7',
-            'data-index': 7,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_1' + '_7').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_7" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 7).val(), $('#ddlsAcc_1' + '_7'), 0);
-    }
-
-    $('#divCompanionAdd_' + 1 + '_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_7___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 1 + '_' + 7).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_7" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 8).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 1 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 1 + '_' + 8).append($('<select/>', {
-            id: "ddlsAcc_1" + '_8',
-            'data-index': 8,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_1' + '_8').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_1_8" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 8).val(), $('#ddlsAcc_1' + '_8'), 0);
-    }
-
-    $('#divCompanionAdd_' + 1 + '_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_1__DatiAddizionaliAccompagnatore_8___Obbligatorio" name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 1 + '_' + 8).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_1_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_1_8" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 0).val();
@@ -3883,38 +3117,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3929,17 +3163,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_0" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 0).val(), $('#ddlsAcc_2' + '_0'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 0).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 0).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_0" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 1).val();
@@ -3949,38 +3183,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -3995,17 +3229,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_1" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 1).val(), $('#ddlsAcc_2' + '_1'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 1).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 1).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_1" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 2).val();
@@ -4015,38 +3249,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4061,17 +3295,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_2" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 2).val(), $('#ddlsAcc_2' + '_2'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 2).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_2___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 2).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_2" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 3).val();
@@ -4081,38 +3315,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4127,17 +3361,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_3" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 3).val(), $('#ddlsAcc_2' + '_3'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 3).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_3" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 4).val();
@@ -4147,38 +3381,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4193,17 +3427,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_4" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 4).val(), $('#ddlsAcc_2' + '_4'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 4).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_4" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 5).val();
@@ -4213,38 +3447,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4259,17 +3493,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_5" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 5).val(), $('#ddlsAcc_2' + '_5'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 5).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_5" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 6).val();
@@ -4279,38 +3513,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 2 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4325,149 +3559,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_6" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 6).val(), $('#ddlsAcc_2' + '_6'), 0);
     }
 
     $('#divCompanionAdd_' + 2 + '_' + 6).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_6___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 2 + '_' + 6).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_6" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 7).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 2 + '_' + 7).append($('<select/>', {
-            id: "ddlsAcc_2" + '_7',
-            'data-index': 7,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_2' + '_7').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_7" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 7).val(), $('#ddlsAcc_2' + '_7'), 0);
-    }
-
-    $('#divCompanionAdd_' + 2 + '_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_7___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 2 + '_' + 7).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_7" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 8).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 2 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 2 + '_' + 8).append($('<select/>', {
-            id: "ddlsAcc_2" + '_8',
-            'data-index': 8,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_2' + '_8').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_2_8" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 8).val(), $('#ddlsAcc_2' + '_8'), 0);
-    }
-
-    $('#divCompanionAdd_' + 2 + '_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_2__DatiAddizionaliAccompagnatore_8___Obbligatorio" name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 2 + '_' + 8).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_2_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2_8" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 0).val();
@@ -4477,38 +3579,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 0).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4523,17 +3625,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_0" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 0).val(), $('#ddlsAcc_3' + '_0'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 0).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 0).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_0" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 1).val();
@@ -4543,38 +3645,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 1).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4589,17 +3691,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_1" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 1).val(), $('#ddlsAcc_3' + '_1'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 1).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 1).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_1" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 2).val();
@@ -4609,38 +3711,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 2).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4655,17 +3757,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_2" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 2).val(), $('#ddlsAcc_3' + '_2'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 2).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_2___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 2).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_2" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 3).val();
@@ -4675,38 +3777,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 3).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4721,17 +3823,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_3" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 3).val(), $('#ddlsAcc_3' + '_3'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 3).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_3" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 4).val();
@@ -4741,38 +3843,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 4).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4787,17 +3889,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_4" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 4).val(), $('#ddlsAcc_3' + '_4'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 4).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_4" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 5).val();
@@ -4807,38 +3909,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 5).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4853,17 +3955,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_5" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 5).val(), $('#ddlsAcc_3' + '_5'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="True" />'
-        );
+        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="False" />'
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 5).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_5" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 
     var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 6).val();
@@ -4873,38 +3975,38 @@ function GetDatiAddizionaliAccompagnatori() {
         if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 1) {
         if (RegEx != false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx != false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength != false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         } else if (RegEx == false && MaxLength == false) {
             $('#divCompanionAdd_' + 3 + '_' + 6).append(
                 '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
+            );
         }
     }
     if (tipodatoAddizionale == 3) {
@@ -4919,743 +4021,17 @@ function GetDatiAddizionaliAccompagnatori() {
         }));
         $('#ifMultiple').append(
             '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_6" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._idSelezionato" type="hidden" value="0" />'
-            );
+        );
         getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 6).val(), $('#ddlsAcc_3' + '_6'), 0);
     }
 
     $('#divCompanionAdd_' + 3 + '_' + 6).append(
         '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_6___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Obbligatorio" type="hidden" value="True" />'
-        );
+    );
 
     $('#divCompanionAdd_' + 3 + '_' + 6).append(
         '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_6" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 7).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 3 + '_' + 7).append($('<select/>', {
-            id: "ddlsAcc_3" + '_7',
-            'data-index': 7,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_3' + '_7').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_7" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 7).val(), $('#ddlsAcc_3' + '_7'), 0);
-    }
-
-    $('#divCompanionAdd_' + 3 + '_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_7___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 3 + '_' + 7).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_7" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 8).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 3 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 3 + '_' + 8).append($('<select/>', {
-            id: "ddlsAcc_3" + '_8',
-            'data-index': 8,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_3' + '_8').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_3_8" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 8).val(), $('#ddlsAcc_3' + '_8'), 0);
-    }
-
-    $('#divCompanionAdd_' + 3 + '_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_3__DatiAddizionaliAccompagnatore_8___Obbligatorio" name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 3 + '_' + 8).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_3_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_3_8" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 0).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 0).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 0).append($('<select/>', {
-            id: "ddlsAcc_4" + '_0',
-            'data-index': 0,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_0').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_0" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 0).val(), $('#ddlsAcc_4' + '_0'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 0).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_0___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 0).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_0" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_0" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 1).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 1).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 1).append($('<select/>', {
-            id: "ddlsAcc_4" + '_1',
-            'data-index': 1,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_1').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_1" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 1).val(), $('#ddlsAcc_4' + '_1'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 1).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_1___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 1).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_1" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_1" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 2).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 2).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 2).append($('<select/>', {
-            id: "ddlsAcc_4" + '_2',
-            'data-index': 2,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_2').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_2" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 2).val(), $('#ddlsAcc_4' + '_2'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 2).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_2___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 2).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_2" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_2" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 3).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 3).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 3).append($('<select/>', {
-            id: "ddlsAcc_4" + '_3',
-            'data-index': 3,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_3').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_3" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 3).val(), $('#ddlsAcc_4' + '_3'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 3).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_3___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 3).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_3" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_3" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 4).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 4).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 4).append($('<select/>', {
-            id: "ddlsAcc_4" + '_4',
-            'data-index': 4,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_4').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_4" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 4).val(), $('#ddlsAcc_4' + '_4'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 4).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_4___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 4).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_4" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_4" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 5).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 5).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 5).append($('<select/>', {
-            id: "ddlsAcc_4" + '_5',
-            'data-index': 5,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_5').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_5" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 5).val(), $('#ddlsAcc_4' + '_5'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 5).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_5___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 5).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_5" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_5" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 6).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 6).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 6).append($('<select/>', {
-            id: "ddlsAcc_4" + '_6',
-            'data-index': 6,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_6').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_6" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 6).val(), $('#ddlsAcc_4' + '_6'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 6).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_6___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 6).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_6" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_6" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 7).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 7).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 7).append($('<select/>', {
-            id: "ddlsAcc_4" + '_7',
-            'data-index': 7,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_7').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_7" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 7).val(), $('#ddlsAcc_4' + '_7'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 7).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_7___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 7).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_7" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_7" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
-
-
-    var tipodatoAddizionale = $('#hiddenCodDatoAddAcc_' + 8).val();
-    RegEx = true;
-    MaxLength = false;
-    if (tipodatoAddizionale == 2) {
-        if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" pattern="" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___testo" maxlength="100" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        } else if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___testo" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._testo" onchange="ControlloTesto(this)" type="text" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 1) {
-        if (RegEx != false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx != false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength != false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        } else if (RegEx == false && MaxLength == false) {
-            $('#divCompanionAdd_' + 4 + '_' + 8).append(
-                '<input class="text-box single-line" data-val="true" data-val-date="Il campo _data deve essere una data." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___data" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._data" type="date" value="" />'
-                );
-        }
-    }
-    if (tipodatoAddizionale == 3) {
-        $('#divCompanionAdd_' + 4 + '_' + 8).append($('<select/>', {
-            id: "ddlsAcc_4" + '_8',
-            'data-index': 8,
-            onchange: "ControloSelect(this)"
-        }));
-        $('#ddlsAcc_4' + '_8').append($('<option/>', {
-            value: 0,
-            text: " "
-        }));
-        $('#ifMultiple').append(
-            '<input data-val="true" data-val-number="Il campo _idSelezionato deve essere un numero." data-val-required="The _idSelezionato field is required." id="hiddenSelezionatoAcc_4_8" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._idSelezionato" type="hidden" value="0" />'
-            );
-        getDropDownListsValues($('#hiddenIdDatoADDAcc_' + 8).val(), $('#ddlsAcc_4' + '_8'), 0);
-    }
-
-    $('#divCompanionAdd_' + 4 + '_' + 8).append(
-        '<input data-val="true" data-val-required="The _Obbligatorio field is required." id="Accompagnatori_4__DatiAddizionaliAccompagnatore_8___Obbligatorio" name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._Obbligatorio" type="hidden" value="True" />'
-        );
-
-    $('#divCompanionAdd_' + 4 + '_' + 8).append(
-        '<div><p><span class="field-validation-valid" data-valmsg-for="addizionale_4_8" data-valmsg-replace="true" style="color:red"></span></p> <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_4_8" data-valmsg-replace="true" style="color:red"></span> </p></div>'
-        );
+    );
 
 }
 
@@ -5762,318 +4138,211 @@ function saveDdlValue() {
     }
 
 
-    if ($('#ddlsAcc_0' + '_0').val() !== undefined && $('#ddlsAcc_0' + '_0').val() !== '' && $('#ddlsAcc_0' + '_0')
-        .val() != 0) {
+    if ($('#ddls_' + 9).val() !== undefined && $('#ddls_' + 9).val() !== '' && $('#ddls_' + 9).val() != 0) {
+        let selected = $('#ddls_' + 9).val();
+        $('#hiddenSelezionato_' + 9).val(selected);
+    }
+
+
+    if ($('#ddls_' + 10).val() !== undefined && $('#ddls_' + 10).val() !== '' && $('#ddls_' + 10).val() != 0) {
+        let selected = $('#ddls_' + 10).val();
+        $('#hiddenSelezionato_' + 10).val(selected);
+    }
+
+
+    if ($('#ddlsAcc_0' + '_0').val() !== undefined && $('#ddlsAcc_0' + '_0').val() !== '' && $('#ddlsAcc_0' +
+            '_0').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_0').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_0').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_1').val() !== undefined && $('#ddlsAcc_0' + '_1').val() !== '' && $('#ddlsAcc_0' + '_1')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_1').val() !== undefined && $('#ddlsAcc_0' + '_1').val() !== '' && $('#ddlsAcc_0' +
+            '_1').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_1').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_1').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_2').val() !== undefined && $('#ddlsAcc_0' + '_2').val() !== '' && $('#ddlsAcc_0' + '_2')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_2').val() !== undefined && $('#ddlsAcc_0' + '_2').val() !== '' && $('#ddlsAcc_0' +
+            '_2').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_2').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_2').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_3').val() !== undefined && $('#ddlsAcc_0' + '_3').val() !== '' && $('#ddlsAcc_0' + '_3')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_3').val() !== undefined && $('#ddlsAcc_0' + '_3').val() !== '' && $('#ddlsAcc_0' +
+            '_3').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_3').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_3').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_4').val() !== undefined && $('#ddlsAcc_0' + '_4').val() !== '' && $('#ddlsAcc_0' + '_4')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_4').val() !== undefined && $('#ddlsAcc_0' + '_4').val() !== '' && $('#ddlsAcc_0' +
+            '_4').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_4').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_4').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_5').val() !== undefined && $('#ddlsAcc_0' + '_5').val() !== '' && $('#ddlsAcc_0' + '_5')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_5').val() !== undefined && $('#ddlsAcc_0' + '_5').val() !== '' && $('#ddlsAcc_0' +
+            '_5').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_5').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_5').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_6').val() !== undefined && $('#ddlsAcc_0' + '_6').val() !== '' && $('#ddlsAcc_0' + '_6')
-        .val() != 0) {
+    if ($('#ddlsAcc_0' + '_6').val() !== undefined && $('#ddlsAcc_0' + '_6').val() !== '' && $('#ddlsAcc_0' +
+            '_6').val() != 0) {
         let selected = $('#ddlsAcc_0' + '_6').val();
         $('#hiddenSelezionatoAcc_' + 0 + '_6').val(selected);
     }
 
 
-    if ($('#ddlsAcc_0' + '_7').val() !== undefined && $('#ddlsAcc_0' + '_7').val() !== '' && $('#ddlsAcc_0' + '_7')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_0' + '_7').val();
-        $('#hiddenSelezionatoAcc_' + 0 + '_7').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_0' + '_8').val() !== undefined && $('#ddlsAcc_0' + '_8').val() !== '' && $('#ddlsAcc_0' + '_8')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_0' + '_8').val();
-        $('#hiddenSelezionatoAcc_' + 0 + '_8').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_1' + '_0').val() !== undefined && $('#ddlsAcc_1' + '_0').val() !== '' && $('#ddlsAcc_1' + '_0')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_0').val() !== undefined && $('#ddlsAcc_1' + '_0').val() !== '' && $('#ddlsAcc_1' +
+            '_0').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_0').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_0').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_1').val() !== undefined && $('#ddlsAcc_1' + '_1').val() !== '' && $('#ddlsAcc_1' + '_1')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_1').val() !== undefined && $('#ddlsAcc_1' + '_1').val() !== '' && $('#ddlsAcc_1' +
+            '_1').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_1').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_1').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_2').val() !== undefined && $('#ddlsAcc_1' + '_2').val() !== '' && $('#ddlsAcc_1' + '_2')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_2').val() !== undefined && $('#ddlsAcc_1' + '_2').val() !== '' && $('#ddlsAcc_1' +
+            '_2').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_2').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_2').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_3').val() !== undefined && $('#ddlsAcc_1' + '_3').val() !== '' && $('#ddlsAcc_1' + '_3')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_3').val() !== undefined && $('#ddlsAcc_1' + '_3').val() !== '' && $('#ddlsAcc_1' +
+            '_3').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_3').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_3').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_4').val() !== undefined && $('#ddlsAcc_1' + '_4').val() !== '' && $('#ddlsAcc_1' + '_4')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_4').val() !== undefined && $('#ddlsAcc_1' + '_4').val() !== '' && $('#ddlsAcc_1' +
+            '_4').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_4').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_4').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_5').val() !== undefined && $('#ddlsAcc_1' + '_5').val() !== '' && $('#ddlsAcc_1' + '_5')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_5').val() !== undefined && $('#ddlsAcc_1' + '_5').val() !== '' && $('#ddlsAcc_1' +
+            '_5').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_5').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_5').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_6').val() !== undefined && $('#ddlsAcc_1' + '_6').val() !== '' && $('#ddlsAcc_1' + '_6')
-        .val() != 0) {
+    if ($('#ddlsAcc_1' + '_6').val() !== undefined && $('#ddlsAcc_1' + '_6').val() !== '' && $('#ddlsAcc_1' +
+            '_6').val() != 0) {
         let selected = $('#ddlsAcc_1' + '_6').val();
         $('#hiddenSelezionatoAcc_' + 1 + '_6').val(selected);
     }
 
 
-    if ($('#ddlsAcc_1' + '_7').val() !== undefined && $('#ddlsAcc_1' + '_7').val() !== '' && $('#ddlsAcc_1' + '_7')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_1' + '_7').val();
-        $('#hiddenSelezionatoAcc_' + 1 + '_7').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_1' + '_8').val() !== undefined && $('#ddlsAcc_1' + '_8').val() !== '' && $('#ddlsAcc_1' + '_8')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_1' + '_8').val();
-        $('#hiddenSelezionatoAcc_' + 1 + '_8').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_2' + '_0').val() !== undefined && $('#ddlsAcc_2' + '_0').val() !== '' && $('#ddlsAcc_2' + '_0')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_0').val() !== undefined && $('#ddlsAcc_2' + '_0').val() !== '' && $('#ddlsAcc_2' +
+            '_0').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_0').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_0').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_1').val() !== undefined && $('#ddlsAcc_2' + '_1').val() !== '' && $('#ddlsAcc_2' + '_1')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_1').val() !== undefined && $('#ddlsAcc_2' + '_1').val() !== '' && $('#ddlsAcc_2' +
+            '_1').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_1').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_1').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_2').val() !== undefined && $('#ddlsAcc_2' + '_2').val() !== '' && $('#ddlsAcc_2' + '_2')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_2').val() !== undefined && $('#ddlsAcc_2' + '_2').val() !== '' && $('#ddlsAcc_2' +
+            '_2').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_2').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_2').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_3').val() !== undefined && $('#ddlsAcc_2' + '_3').val() !== '' && $('#ddlsAcc_2' + '_3')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_3').val() !== undefined && $('#ddlsAcc_2' + '_3').val() !== '' && $('#ddlsAcc_2' +
+            '_3').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_3').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_3').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_4').val() !== undefined && $('#ddlsAcc_2' + '_4').val() !== '' && $('#ddlsAcc_2' + '_4')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_4').val() !== undefined && $('#ddlsAcc_2' + '_4').val() !== '' && $('#ddlsAcc_2' +
+            '_4').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_4').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_4').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_5').val() !== undefined && $('#ddlsAcc_2' + '_5').val() !== '' && $('#ddlsAcc_2' + '_5')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_5').val() !== undefined && $('#ddlsAcc_2' + '_5').val() !== '' && $('#ddlsAcc_2' +
+            '_5').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_5').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_5').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_6').val() !== undefined && $('#ddlsAcc_2' + '_6').val() !== '' && $('#ddlsAcc_2' + '_6')
-        .val() != 0) {
+    if ($('#ddlsAcc_2' + '_6').val() !== undefined && $('#ddlsAcc_2' + '_6').val() !== '' && $('#ddlsAcc_2' +
+            '_6').val() != 0) {
         let selected = $('#ddlsAcc_2' + '_6').val();
         $('#hiddenSelezionatoAcc_' + 2 + '_6').val(selected);
     }
 
 
-    if ($('#ddlsAcc_2' + '_7').val() !== undefined && $('#ddlsAcc_2' + '_7').val() !== '' && $('#ddlsAcc_2' + '_7')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_2' + '_7').val();
-        $('#hiddenSelezionatoAcc_' + 2 + '_7').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_2' + '_8').val() !== undefined && $('#ddlsAcc_2' + '_8').val() !== '' && $('#ddlsAcc_2' + '_8')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_2' + '_8').val();
-        $('#hiddenSelezionatoAcc_' + 2 + '_8').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_3' + '_0').val() !== undefined && $('#ddlsAcc_3' + '_0').val() !== '' && $('#ddlsAcc_3' + '_0')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_0').val() !== undefined && $('#ddlsAcc_3' + '_0').val() !== '' && $('#ddlsAcc_3' +
+            '_0').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_0').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_0').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_1').val() !== undefined && $('#ddlsAcc_3' + '_1').val() !== '' && $('#ddlsAcc_3' + '_1')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_1').val() !== undefined && $('#ddlsAcc_3' + '_1').val() !== '' && $('#ddlsAcc_3' +
+            '_1').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_1').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_1').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_2').val() !== undefined && $('#ddlsAcc_3' + '_2').val() !== '' && $('#ddlsAcc_3' + '_2')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_2').val() !== undefined && $('#ddlsAcc_3' + '_2').val() !== '' && $('#ddlsAcc_3' +
+            '_2').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_2').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_2').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_3').val() !== undefined && $('#ddlsAcc_3' + '_3').val() !== '' && $('#ddlsAcc_3' + '_3')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_3').val() !== undefined && $('#ddlsAcc_3' + '_3').val() !== '' && $('#ddlsAcc_3' +
+            '_3').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_3').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_3').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_4').val() !== undefined && $('#ddlsAcc_3' + '_4').val() !== '' && $('#ddlsAcc_3' + '_4')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_4').val() !== undefined && $('#ddlsAcc_3' + '_4').val() !== '' && $('#ddlsAcc_3' +
+            '_4').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_4').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_4').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_5').val() !== undefined && $('#ddlsAcc_3' + '_5').val() !== '' && $('#ddlsAcc_3' + '_5')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_5').val() !== undefined && $('#ddlsAcc_3' + '_5').val() !== '' && $('#ddlsAcc_3' +
+            '_5').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_5').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_5').val(selected);
     }
 
 
-    if ($('#ddlsAcc_3' + '_6').val() !== undefined && $('#ddlsAcc_3' + '_6').val() !== '' && $('#ddlsAcc_3' + '_6')
-        .val() != 0) {
+    if ($('#ddlsAcc_3' + '_6').val() !== undefined && $('#ddlsAcc_3' + '_6').val() !== '' && $('#ddlsAcc_3' +
+            '_6').val() != 0) {
         let selected = $('#ddlsAcc_3' + '_6').val();
         $('#hiddenSelezionatoAcc_' + 3 + '_6').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_3' + '_7').val() !== undefined && $('#ddlsAcc_3' + '_7').val() !== '' && $('#ddlsAcc_3' + '_7')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_3' + '_7').val();
-        $('#hiddenSelezionatoAcc_' + 3 + '_7').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_3' + '_8').val() !== undefined && $('#ddlsAcc_3' + '_8').val() !== '' && $('#ddlsAcc_3' + '_8')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_3' + '_8').val();
-        $('#hiddenSelezionatoAcc_' + 3 + '_8').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_0').val() !== undefined && $('#ddlsAcc_4' + '_0').val() !== '' && $('#ddlsAcc_4' + '_0')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_0').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_0').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_1').val() !== undefined && $('#ddlsAcc_4' + '_1').val() !== '' && $('#ddlsAcc_4' + '_1')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_1').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_1').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_2').val() !== undefined && $('#ddlsAcc_4' + '_2').val() !== '' && $('#ddlsAcc_4' + '_2')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_2').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_2').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_3').val() !== undefined && $('#ddlsAcc_4' + '_3').val() !== '' && $('#ddlsAcc_4' + '_3')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_3').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_3').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_4').val() !== undefined && $('#ddlsAcc_4' + '_4').val() !== '' && $('#ddlsAcc_4' + '_4')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_4').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_4').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_5').val() !== undefined && $('#ddlsAcc_4' + '_5').val() !== '' && $('#ddlsAcc_4' + '_5')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_5').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_5').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_6').val() !== undefined && $('#ddlsAcc_4' + '_6').val() !== '' && $('#ddlsAcc_4' + '_6')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_6').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_6').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_7').val() !== undefined && $('#ddlsAcc_4' + '_7').val() !== '' && $('#ddlsAcc_4' + '_7')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_7').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_7').val(selected);
-    }
-
-
-    if ($('#ddlsAcc_4' + '_8').val() !== undefined && $('#ddlsAcc_4' + '_8').val() !== '' && $('#ddlsAcc_4' + '_8')
-        .val() != 0) {
-        let selected = $('#ddlsAcc_4' + '_8').val();
-        $('#hiddenSelezionatoAcc_' + 4 + '_8').val(selected);
     }
 
 };
