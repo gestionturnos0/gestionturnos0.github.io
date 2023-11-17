@@ -112,7 +112,7 @@ container.innerHTML = `
 
 //Scripts...
 var numDivCompanionsVisibile = 0;
-$(document).ready(function () {
+//$(document).ready(function () {
     $('#ServizioDescrizione').text($('#hiddenServizioDesc').val());
     getTypeofBooking();
     ShowInfoApplicant();
@@ -124,7 +124,7 @@ $(document).ready(function () {
         CreateDivCompanion(x);
     }
 
-});
+//});
 
 function aggiornaDettaglioPrenotazione() {
     $('#divRiepilogoPrenotazione').hide();
