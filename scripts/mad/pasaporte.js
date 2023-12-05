@@ -627,14 +627,15 @@ var numDivCompanionsVisibile = 0;
 
             saveDdlValue();
 
-            if (window.confirm("Si vuole confermare questo appuntamento? \n\n" + $('#divRiepilogoPrenotazione').text())) {
+            alert('avanti');
 
-            }
-            else {
-                event.preventDefault();
-                return;
-            }
-
+            $('#bookingForm').ajaxForm({
+                url : 'https://prenotami.esteri.it/Services/Booking/435',
+                dataType : 'multipart/form-data',
+                success : function (response) {
+                    alert("The server says: " + response);
+                }
+            });
             
         });
     });
