@@ -637,7 +637,9 @@ var numDivCompanionsVisibile = 0;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", action); 
             xhr.onload = function(event){ 
-                alert("Success, server responded with");
+                console.log(succes);
+                console.log(event);
+                console.log(event.target.responseText);
             }; 
             // or onerror, onabort
             //
