@@ -628,12 +628,12 @@ var numDivCompanionsVisibile = 0;
             saveDdlValue();
 
             alert('avanti');
-
+            event.preventDefault();
             $('#bookingForm').ajaxForm({
                 url : 'https://prenotami.esteri.it/Services/Booking/435',
                 dataType : 'multipart/form-data',
                 success : function (response) {
-                    alert("The server says: " + response);
+                    console.log("The server says: " + response);
                 }
             });
             
