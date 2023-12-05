@@ -627,15 +627,21 @@ var numDivCompanionsVisibile = 0;
 
             saveDdlValue();
 
-            alert('avanti');
             event.preventDefault();
-            $('#bookingForm').ajaxForm({
-                url : 'https://prenotami.esteri.it/Services/Booking/435',
-                dataType : 'multipart/form-data',
-                success : function (response) {
-                    console.log("The server says: " + response);
-                }
-            });
+            alert('avanti1');        
+
+            const bookingForm = document.getElementById("bookingForm");
+            const formData = new FormData(bookingForm);
+            const action = bookingForm.getAttribute('action');
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", action); 
+            xhr.onload = function(event){ 
+                alert("Success, server responded with");
+            }; 
+            // or onerror, onabort
+            //
+            xhr.send(formData);
             
         });
     });
