@@ -21,7 +21,7 @@ function requestBooking(selectedDay, idService) {
         error: function (response) {
             console.log('error')
             console.log(response)
-            alert("Error 1 obteniendo horarios. Prueba de nuevo. " + exception);
+            alert("Error 1 obteniendo horarios. Prueba de nuevo. " + response.statusText);
         }
     });
 }
