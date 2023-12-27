@@ -1,3 +1,6 @@
+const container = document.getElementsByTagName('section')[0];
+container.innerHTML = '';
+
 container.innerHTML = `
   <form action="https://prenotami.esteri.it/Services/Booking/92" enctype="multipart/form-data" id="bookingForm"
     method="post">    
