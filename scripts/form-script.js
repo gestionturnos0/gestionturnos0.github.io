@@ -4383,6 +4383,7 @@ function sendOTP() {
     });
 }
 
+
 //AVANTI
 $(function () {
     $("#btnAvanti").click(function () {
@@ -4405,35 +4406,28 @@ $(function () {
         const formData = new FormData(bookingForm);
         const action = bookingForm.getAttribute('action');
 
-        const bookingDayCalendar = document.getElementById('booking-day-calendar').value;
-        const idService = action.substring(action.lastIndexOf('/') + 1);
+        //Save selected day and service on session storage for reading them later
+        sessionStorage.setItem('selectedDay', document.getElementById('booking-day-calendar').value);
+        sessionStorage.setItem('idService', action.substring(action.lastIndexOf('/') + 1));
 
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", action);
-        xhr.onload = function (event) {            
+        xhr.open("POST", action);        
+        
+        xhr.onloadstart = function (event) {}
+        
+        xhr.onload = function (event) {
+            console.log('onload');
+            //console.log(event);
+            console.log(window.performance.now())    
 
             if (event.target.status == 302) {
                 console.log('302. Booking redirect');
                 console.log(event);
-
-                
             }
             if (event.target.status == 200) {
                 console.log('200. Booking passed');
                 console.log(event);
-
-                if (event.target.responseURL == "https://prenotami.esteri.it/Services/Booking/" + idService) {
-                    console.log("Redirect to booking skipped")
-                } else {
-                    window.open(event.target.responseURL, '_blank');
-                }
-
-                //Request booking 3 times
-                requestBooking(bookingDayCalendar, idService, "1/3");
-
-                requestBooking(bookingDayCalendar, idService, "2/3");
-
-                requestBooking(bookingDayCalendar, idService, "3/3");
+                console.log(event.target.responseURL);                                
 
             } else if (event.target.status == 503) {
                 console.log('Service Unavailable');
@@ -4447,6 +4441,21 @@ $(function () {
                 alert('Error 3 enviando el form. Probar de nuevo');
             }
         };
+
+        xhr.onprogress = function (event) {
+            //console.log('onprogress');
+            //console.log(event);
+            //console.log(window.performance.now())                      
+        }
+
+        xhr.onreadystatechange = function (event) {
+            //console.log('onreadystatechange');
+            //console.log(event);
+            //console.log(window.performance.now())                 
+        }
+        
+        xhr.onloadend = function (event) {}
+
         xhr.onerror = function (event) {
             console.log('onerror');
             console.log(event);
@@ -4455,101 +4464,13 @@ $(function () {
             console.log('onabort');
             console.log(event);
         };
+        xhr.ontimeout = function (event) {
+            console.log('ontimeout');
+            console.log(event);
+        };
+                
         xhr.send(formData);
 
         //END CUSTOM
     });
 });
-
-//CUSTOM request booking methods
-
-function requestBooking(selectedDay, idService, attempt = "") {
-    console.log("Requesting booking...")
-    console.log(selectedDay);
-    console.log(idService);
-
-    //Retrieve timeslot and request booking on first time
-    $.ajax({
-        url: 'https://prenotami.esteri.it/BookingCalendar/RetrieveTimeSlots',
-        type: 'POST',
-        data: JSON.stringify({"selectedDay": selectedDay, "idService": idService}),
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: function (response) {
-            console.log('success')
-            console.log(response)
-            readTimeSlot(JSON.parse(response)[0]);
-        },
-        error: function (response) {
-            console.log('Error 1 obteniendo horarios.')
-            console.log(response);
-            if (response.status == 500) {
-                console.log('Error 500 esta pestaña ya no sirve. Cerrarla.')
-                alert(attempt + "Error 500 obteniendo horarios. ESTA PESTAÑA/OTP YA NO SIRVE. CERRARLA O PEDI UN OTP NUEVO " + response.statusText);
-            } else {
-                alert("Error 1 obteniendo horarios. Prueba de nuevo. " + response.statusText);
-            }                    
-        }
-    });
-}
-
-function readTimeSlot(timeslot) {
-    console.log("Reading time slot");
-    console.log(timeslot);
-    try {
-        if (timeslot.SlotLiberi > 0) {
-        
-            let idCalendarioGiornaliero = timeslot.IDCalendarioServizioGiornaliero;
-            
-            let dateString = timeslot.Data.split(" ")[0];
-            let dateParts = dateString.split("/");
-            let selectedDay = "" + dateParts[2] + "-" + dateParts[1] + "-" + dateParts[0];
-            
-            let selectedHour = "" + String(timeslot.OrarioInizioFascia.Hours).padStart(2, '0')  + ":" + String(timeslot.OrarioInizioFascia.Minutes).padStart(2, '0') + " - " + String(timeslot.OrarioFineFascia.Hours).padStart(2, '0')  + ":" + String(timeslot.OrarioFineFascia.Minutes).padStart(2, '0') + "(" + timeslot.SlotLiberi + ")"
-            
-            //Try three times
-            insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
-
-            insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
-
-            insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour);
-        }
-        else {
-            alert("No hay turnos disponibles en el día elegido. Pureba otro día.");
-        }
-    } catch (exception) {
-        console.log(exception)
-        alert("Error 2 obteniendo horarios. Pureba de nuevo. " + exception);
-    }
-};
-
-function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
-    console.log("Inserting booking...");
-
-    $.ajax({
-        type: "POST",
-        url: '/BookingCalendar/InsertNewBooking',
-        data: { "idCalendarioGiornaliero": idCalendarioGiornaliero, "selectedDay": selectedDay, "selectedHour": selectedHour },
-        dataType: "json",
-        success: function (response) {
-            console.log("success");
-            console.log(response);
-        
-            if (response.url) {
-                let url = response.url;
-                if  (url.includes("isBooking=True")) {
-                    alert("RESERVADO CON EXITO! " + JSON.stringify(response));
-                    window.location.replace("https://prenotami.esteri.it/" + response.url);
-                } else {
-                    alert(JSON.stringify(response))
-                }
-            }            
-        },
-        error: function (xhr, status, error) {                    
-            console.log(xhr.statusText);
-            console.log(status);
-            console.log(error);
-            alert("Error insertando reserva: " + error);
-        }
-    });
-}
