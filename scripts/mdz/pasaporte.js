@@ -3,22 +3,24 @@ container.innerHTML = '';
 
 container.innerHTML = `
 <form action="https://prenotami.esteri.it/Services/Booking/4685" enctype="multipart/form-data" id="bookingForm"
-    method="post">
+    method="post">    
     <div class="container" id="div-container">
 
         <h1 class="heading-container" id="ServizioDescrizione">Servizio rilascio passaporti</h1>
         <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden" value="Servizio rilascio passaporti">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
-            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="False">
+            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="True">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
             name="isWaitingListEnabled" type="hidden" value="False">
 
 
-        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="display:none;">
+        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
             <div id="divTitolo"></div>
             <div id="divDettaglio"></div>
             <div id="divAppuntamenti">
-                <ul></ul>
+                <ul>
+                    <li></li>
+                </ul>
             </div>
         </div>
         <div>
@@ -32,10 +34,13 @@ container.innerHTML = `
                     data-val-required="The IDServizioErogato field is required." id="IDServizioErogato"
                     name="IDServizioErogato" type="hidden" value="4685">
                 <label>Tipo Prenotazione</label>
-                <select id="typeofbookingddl"></select>
+                <select id="typeofbookingddl">
+                    <option value="1">Prenotazione Singola</option>
+                    <option value="2">Prenotazione Multipla</option>
+                </select>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
                     data-val-required="The IdTipoPrenotazione field is required." id="hiddenTipoPrenotazione"
-                    name="IdTipoPrenotazione" type="hidden" value="0">
+                    name="IdTipoPrenotazione" type="hidden" value="1">
                 <input data-val="true" data-val-number="Il campo NumMaxAccompagnatori deve essere un numero."
                     data-val-required="The NumMaxAccompagnatori field is required." id="hiddenNumMax"
                     name="NumMaxAccompagnatori" type="hidden" value="5">
@@ -57,8 +62,14 @@ container.innerHTML = `
                     name="NumAccompagnatoriSelected" type="hidden" value="0">
             </div>
 
-            <div id="infoapplicant" style="">
+            <div id="applicantBufferDiv" style="margin: 10px 0px 30px; display: none;">
                 <h2>Dati Richiedente</h2>
+                <p><strong>Cognome</strong></p>Cristina
+                <p><strong>Nome</strong></p>Perez
+                <p><strong>Data di nascita</strong></p>15/09/1995
+            </div>
+
+            <div id="infoapplicant" style="">
                 <div id="datoaddizionale_0">
                     <label id="addizionale">
                         Indirizzo completo di residenza &nbsp;<b>*</b> </label>
@@ -79,7 +90,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="41227"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="53493"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -95,6 +106,8 @@ container.innerHTML = `
                         name="DatiAddizionaliPrenotante[1]._Descrizione" type="hidden" value="Figli minorenni">
                     <select id="ddls_1" data-index="1" onchange="ControloSelect(this)">
                         <option value="0"> </option>
+                        <option value="11">Si</option>
+                        <option value="12">No</option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_1___Obbligatorio"
                         name="DatiAddizionaliPrenotante[1]._Obbligatorio" type="hidden" value="True">
@@ -107,7 +120,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId1"
-                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="41228"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="53494"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -135,7 +148,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId2"
-                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="41229"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="53495"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -151,6 +164,15 @@ container.innerHTML = `
                         name="DatiAddizionaliPrenotante[3]._Descrizione" type="hidden" value="Stato civile">
                     <select id="ddls_3" data-index="3" onchange="ControloSelect(this)">
                         <option value="0"> </option>
+                        <option value="13">Coniugato/a</option>
+                        <option value="14">Divorziato/a</option>
+                        <option value="15">Vedovo/a</option>
+                        <option value="16">Celibe/Nubile</option>
+                        <option value="17">Separato/a</option>
+                        <option value="18">Unito/a Civilmente</option>
+                        <option value="19">Separato/a da Un. Civ.</option>
+                        <option value="20">Divorziato/a da Un. Civ.</option>
+                        <option value="21">Vedovo/a da Un. Civ.</option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_3___Obbligatorio"
                         name="DatiAddizionaliPrenotante[3]._Obbligatorio" type="hidden" value="True">
@@ -163,7 +185,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId3"
-                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="41230"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="53496"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -192,7 +214,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="41231"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="53497"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -209,6 +231,8 @@ container.innerHTML = `
                         value="In possesso di passaporto italiano scaduto/in scadenza">
                     <select id="ddls_5" data-index="5" onchange="ControloSelect(this)">
                         <option value="0"> </option>
+                        <option value="1">Si</option>
+                        <option value="2">No</option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_5___Obbligatorio"
                         name="DatiAddizionaliPrenotante[5]._Obbligatorio" type="hidden" value="True">
@@ -221,7 +245,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId5"
-                    name="DatiAddizionaliPrenotante[5]._Id" type="hidden" value="41232"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[5]._Id" type="hidden" value="53498"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_5"
                     name="DatiAddizionaliPrenotante[5]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -249,7 +273,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId6"
-                    name="DatiAddizionaliPrenotante[6]._Id" type="hidden" value="41233"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[6]._Id" type="hidden" value="53499"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_6"
                     name="DatiAddizionaliPrenotante[6]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -277,7 +301,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId7"
-                    name="DatiAddizionaliPrenotante[7]._Id" type="hidden" value="41234"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[7]._Id" type="hidden" value="53500"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_7"
                     name="DatiAddizionaliPrenotante[7]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -293,6 +317,11 @@ container.innerHTML = `
                         name="DatiAddizionaliPrenotante[8]._Descrizione" type="hidden" value="Colore degli occhi">
                     <select id="ddls_8" data-index="8" onchange="ControloSelect(this)">
                         <option value="0"> </option>
+                        <option value="22">Azzurro</option>
+                        <option value="23">Marrone</option>
+                        <option value="24">Grigio</option>
+                        <option value="25">Nero</option>
+                        <option value="26">Verde</option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_8___Obbligatorio"
                         name="DatiAddizionaliPrenotante[8]._Obbligatorio" type="hidden" value="True">
@@ -305,7 +334,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId8"
-                    name="DatiAddizionaliPrenotante[8]._Id" type="hidden" value="41235"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[8]._Id" type="hidden" value="53501"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_8"
                     name="DatiAddizionaliPrenotante[8]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -333,7 +362,7 @@ container.innerHTML = `
                         data-valmsg-replace="true" style="color:red"></span>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="DocumentiPrenotante_0___Id"
-                        name="DocumentiPrenotante[0]._Id" type="hidden" value="9826">
+                        name="DocumentiPrenotante[0]._Id" type="hidden" value="12411">
                 </div>
                 <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                     data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_0"
@@ -358,7 +387,7 @@ container.innerHTML = `
                         data-valmsg-replace="true" style="color:red"></span>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="DocumentiPrenotante_1___Id"
-                        name="DocumentiPrenotante[1]._Id" type="hidden" value="9827">
+                        name="DocumentiPrenotante[1]._Id" type="hidden" value="12412">
                 </div>
                 <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                     data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_1"
@@ -378,7 +407,7 @@ container.innerHTML = `
                     name="DatiAddizionaliPrenotante[8]._idSelezionato" type="hidden" value="0">
             </div>
 
-            <div id="ifMultiple">
+            <div id="ifMultiple" style="display: none;">
                 <div id="divCompanion_0" style="display: none;">
                     <h2>Dati richiedente aggiuntivo 1</h2>
                     <div>
@@ -422,7 +451,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="53502"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -442,7 +471,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="53503"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -462,7 +491,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="53504"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -482,7 +511,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="53505"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -502,7 +531,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="53506"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -522,7 +551,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="53507"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -542,7 +571,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="53508"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -562,7 +591,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="53509"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -582,7 +611,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="53510"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -614,7 +643,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc0"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
+                            name="Accompagnatori[0].DocumentiAccompagnatore[0]._Id" type="hidden" value="12413">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
@@ -641,7 +670,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc0"
-                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
+                            name="Accompagnatori[0].DocumentiAccompagnatore[1]._Id" type="hidden" value="12414">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
@@ -693,7 +722,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="53502"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -713,7 +742,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="53503"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -733,7 +762,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="53504"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -753,7 +782,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="53505"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -773,7 +802,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="53506"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -793,7 +822,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="53507"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -813,7 +842,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="53508"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -833,7 +862,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="53509"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -853,7 +882,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="53510"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -885,7 +914,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc1"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
+                            name="Accompagnatori[1].DocumentiAccompagnatore[0]._Id" type="hidden" value="12413">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
@@ -912,7 +941,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc1"
-                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
+                            name="Accompagnatori[1].DocumentiAccompagnatore[1]._Id" type="hidden" value="12414">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
@@ -964,7 +993,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="53502"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -984,7 +1013,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="53503"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1004,7 +1033,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="53504"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1024,7 +1053,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="53505"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1044,7 +1073,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="53506"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1064,7 +1093,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="53507"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1084,7 +1113,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="53508"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1104,7 +1133,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="53509"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1124,7 +1153,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="53510"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1156,7 +1185,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc2"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
+                            name="Accompagnatori[2].DocumentiAccompagnatore[0]._Id" type="hidden" value="12413">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
@@ -1183,7 +1212,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc2"
-                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
+                            name="Accompagnatori[2].DocumentiAccompagnatore[1]._Id" type="hidden" value="12414">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
@@ -1235,7 +1264,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="53502"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1255,7 +1284,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="53503"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1275,7 +1304,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="53504"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1295,7 +1324,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="53505"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1315,7 +1344,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="53506"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1335,7 +1364,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="53507"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1355,7 +1384,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="53508"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1375,7 +1404,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="53509"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1395,7 +1424,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="53510"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1427,7 +1456,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc3"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
+                            name="Accompagnatori[3].DocumentiAccompagnatore[0]._Id" type="hidden" value="12413">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
@@ -1454,7 +1483,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc3"
-                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
+                            name="Accompagnatori[3].DocumentiAccompagnatore[1]._Id" type="hidden" value="12414">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
@@ -1506,7 +1535,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="41236"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="53502"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1526,7 +1555,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="41237"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="53503"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1546,7 +1575,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="41238"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="53504"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1566,7 +1595,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="41239"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._Id" type="hidden" value="53505"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_3"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[3]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1586,7 +1615,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="41240"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._Id" type="hidden" value="53506"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_4"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[4]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1606,7 +1635,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="41241"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._Id" type="hidden" value="53507"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_5"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[5]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1626,7 +1655,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="41242"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._Id" type="hidden" value="53508"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_6"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[6]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1646,7 +1675,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="41243"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._Id" type="hidden" value="53509"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_7"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[7]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1666,7 +1695,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc4"
-                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="41244"><input
+                        name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._Id" type="hidden" value="53510"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_8"
                         name="Accompagnatori[4].DatiAddizionaliAccompagnatore[8]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -1698,7 +1727,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc4"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._Id" type="hidden" value="9828">
+                            name="Accompagnatori[4].DocumentiAccompagnatore[0]._Id" type="hidden" value="12413">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_0"
@@ -1725,7 +1754,7 @@ container.innerHTML = `
                             data-valmsg-replace="true" style="color:red"></span>
                         <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                             data-val-required="The _Id field is required." id="hiddenIdDoc4"
-                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._Id" type="hidden" value="9829">
+                            name="Accompagnatori[4].DocumentiAccompagnatore[1]._Id" type="hidden" value="12414">
                     </div>
                     <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                         data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADDAcc_1"
