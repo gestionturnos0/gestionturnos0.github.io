@@ -1,3 +1,17 @@
+try {
+    fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.ip);
+        localStorage.setItem('ip', data.ip);
+    })
+    .catch(error => {
+        console.log('Error:', error);
+    });
+} catch (exception) {
+    console.log(exception)
+}
+
 var numDivCompanionsVisibile = 0;
 //$(document).ready(function () {
     $('#ServizioDescrizione').text($('#hiddenServizioDesc').val());
@@ -4526,6 +4540,8 @@ function readTimeSlot(timeslot) {
     console.log(timeslot);
     try {
         if (timeslot.SlotLiberi > 0) {
+            console.log('Desde form-script');
+            console.log('TURNOS DISPONIBLES AL MOMENTO DE RESERVAR: ' + timeslot.SlotLiberi);
         
             let idCalendarioGiornaliero = timeslot.IDCalendarioServizioGiornaliero;
             
@@ -4560,12 +4576,15 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
         data: { "idCalendarioGiornaliero": idCalendarioGiornaliero, "selectedDay": selectedDay, "selectedHour": selectedHour },
         dataType: "json",
         success: function (response) {
-            console.log("success");
+            console.log("Insert booking 200");
             console.log(response);
         
             if (response.url) {
                 let url = response.url;
                 if  (url.includes("isBooking=True")) {
+
+                    saveUserDataOnLog('detail');
+                    
                     alert("RESERVADO CON EXITO! " + JSON.stringify(response));
                     window.location.replace("https://prenotami.esteri.it/" + response.url);
                 } else {
@@ -4580,4 +4599,39 @@ function insertNewBooking(idCalendarioGiornaliero, selectedDay, selectedHour) {
             alert("Error insertando reserva: " + error);
         }
     });
+}
+
+//Log on BD
+function saveUserDataOnLog(action = "") {
+    try {
+        let now = (new Date(Date.now()).toISOString());
+        let bodyData = JSON.stringify({
+            data: [
+                {
+                    'Fecha': now,
+                    'Consulado': null,
+                    'Nombre': null,
+                    'Ubicacion': null,                  
+                    'Accion': action,
+                    'IP': localStorage.getItem('ip'),
+                }
+            ]
+        });        
+
+        //Guardar info en registro
+        console.log('saving user data');
+        fetch('https://sheetdb.io/api/v1/lricoss0dhxac', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: bodyData
+        })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+    } catch (error) {
+        console.log(error);
+    }
 }
