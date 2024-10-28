@@ -92,7 +92,7 @@ method="post">
             </div>
             <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                 data-val-required="The _Id field is required." id="hiddenId0"
-                name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="1691"><input data-val="true"
+                name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="67728"><input data-val="true"
                 data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                 data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                 name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -121,7 +121,7 @@ method="post">
             </div>
             <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                 data-val-required="The _Id field is required." id="hiddenId1"
-                name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="1692"><input data-val="true"
+                name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="67729"><input data-val="true"
                 data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                 data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                 name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -149,7 +149,7 @@ method="post">
             </div>
             <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                 data-val-required="The _Id field is required." id="hiddenId2"
-                name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="1693"><input data-val="true"
+                name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="67730"><input data-val="true"
                 data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                 data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                 name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
