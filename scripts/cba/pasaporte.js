@@ -212,7 +212,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="367724"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="67724"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -461,7 +461,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67726"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67725"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
