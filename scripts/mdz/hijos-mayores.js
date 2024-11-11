@@ -2,26 +2,24 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-<form action="https://prenotami.esteri.it/Services/Booking/435" enctype="multipart/form-data" id="bookingForm"
+<form action="https://prenotami.esteri.it/Services/Booking/5289" enctype="multipart/form-data" id="bookingForm"
     method="post">    
     <div class="container" id="div-container">
 
-        <h1 class="heading-container" id="ServizioDescrizione">CITTADINANZA FIGLI DIRETTI MAGGIORENNI</h1>
+        <h1 class="heading-container" id="ServizioDescrizione"></h1>
         <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden"
             value="CITTADINANZA FIGLI DIRETTI MAGGIORENNI">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
-            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="False">
+            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="True">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
             name="isWaitingListEnabled" type="hidden" value="False">
 
 
-        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
+        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="display:none;">
             <div id="divTitolo"></div>
             <div id="divDettaglio"></div>
             <div id="divAppuntamenti">
-                <ul>
-                    <li></li>
-                </ul>
+                <ul></ul>
             </div>
         </div>
         <div>
@@ -33,14 +31,12 @@ container.innerHTML = `
                     name="IDServizioConsolare" type="hidden" value="27">
                 <input data-val="true" data-val-number="Il campo IDServizioErogato deve essere un numero."
                     data-val-required="The IDServizioErogato field is required." id="IDServizioErogato"
-                    name="IDServizioErogato" type="hidden" value="435">
+                    name="IDServizioErogato" type="hidden" value="5289">
                 <label>Tipo Prenotazione</label>
-                <select id="typeofbookingddl">
-                    <option value="1">Prenotazione Singola</option>
-                </select>
+                <select id="typeofbookingddl"></select>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
                     data-val-required="The IdTipoPrenotazione field is required." id="hiddenTipoPrenotazione"
-                    name="IdTipoPrenotazione" type="hidden" value="1">
+                    name="IdTipoPrenotazione" type="hidden" value="0">
                 <input data-val="true" data-val-number="Il campo NumMaxAccompagnatori deve essere un numero."
                     data-val-required="The NumMaxAccompagnatori field is required." id="hiddenNumMax"
                     name="NumMaxAccompagnatori" type="hidden" value="0">
@@ -57,11 +53,61 @@ container.innerHTML = `
                     name="NumAccompagnatoriSelected" type="hidden" value="0">
             </div>
 
-            <div id="infoapplicant" style="display:none">
+            <div id="applicantBufferDiv" style="margin:10px 0px 30px 0px;">
                 <h2>Dati Richiedente</h2>
+                <p><strong>Cognome</strong></p>
+                <p><strong>Nome</strong></p>
+                <p><strong>Data di nascita</strong></p>
             </div>
 
-            <div id="ifMultiple" style="display: none;">
+            <div id="infoapplicant" style="display:none">
+                <div id="datoaddizionale_0">
+                    <label id="addizionale">
+                        Nome dell'avo italiano o del parente già cittadino e registrato in anagrafe Consolare
+                        &nbsp;<b>*</b> </label>
+                    <input id="DatiAddizionaliPrenotante_0___Descrizione"
+                        name="DatiAddizionaliPrenotante[0]._Descrizione" type="hidden"
+                        value="Nome dell&#39;avo italiano o del parente già cittadino e registrato in anagrafe Consolare">
+                </div>
+                <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                    data-val-required="The _Id field is required." id="hiddenId0"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="68010"><input data-val="true"
+                    data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
+                    data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
+                    name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
+                    value="60"><input data-val="true" data-val-number="Il campo IDTipoControllo deve essere un numero."
+                    data-val-required="The IDTipoControllo field is required." id="hiddenCodDatoAdd_0"
+                    name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoControllo" type="hidden"
+                    value="2"><input id="hiddenRegEx_0" name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.RegEx"
+                    type="hidden" value="">
+                <div id="docAddizionale_0">
+                    <label id="doc">
+                        Documento di identità/viaggio &nbsp;<b>*</b> </label>
+                    <p class="helper">E' possibile inserire file in formato PDF di massimo un 1MB<b>;</b></p>
+                    <input id="DocumentiPrenotante_0___Descrizione" name="DocumentiPrenotante[0]._Descrizione"
+                        type="hidden" value="Documento di identità/viaggio">
+                    <input id="File_0" name="DocumentiPrenotante[0]._File" onchange="controlloFileCaricato(this)"
+                        type="file" value="">
+                    <span class="field-validation-valid" data-valmsg-for="Lenght_0" data-valmsg-replace="true"
+                        style="color:red"></span>
+                    <input data-val="true" data-val-required="The _Obbligatorio field is required."
+                        id="DocumentiPrenotante_0___Obbligatorio" name="DocumentiPrenotante[0]._Obbligatorio"
+                        type="hidden" value="True">
+                    <span class="field-validation-valid validator-required" data-valmsg-for="Required_0"
+                        data-valmsg-replace="true" style="color:red"></span>
+                    <span class="field-validation-valid validator-required" data-valmsg-for="Extension_0"
+                        data-valmsg-replace="true" style="color:red"></span>
+                    <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
+                        data-val-required="The _Id field is required." id="DocumentiPrenotante_0___Id"
+                        name="DocumentiPrenotante[0]._Id" type="hidden" value="15832">
+                </div>
+                <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
+                    data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_0"
+                    name="DocumentiPrenotante[0]._TipoDocumento.IDTipoDocumento" type="hidden" value="4"><input
+                    id="hiddenFile_0" name="DocumentiPrenotante[0]._File" type="hidden" value="">
+            </div>
+
+            <div id="ifMultiple">
             </div>
         </div>
         <div>
@@ -71,11 +117,17 @@ container.innerHTML = `
         </div>
 
         <div style="margin:30px 0px 30px 0px;">
+            <h2>OTP</h2>
+            <input type="text" placeholder="OTP" id="otp-input" name="otp-input" class="name form-control"
+                style="margin-bottom:20px;" required="">
+            <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
+            <img id="otp-loader" src="./Booking - Prenot@Mi Hijo directo_files/loading.GIF" alt=""
+                style="height:50px;margin-left:20px;display:none;">
             <div id="IdOtpSent" style="display:none; color:green;">
-                <p></p>
+                <p>Nuovo codice inviato!</p>
             </div>
             <div id="IdOtpInvalid" style="display: none; color: red;">
-                <p></p>
+                <p>Codice errato!</p>
             </div>
 
         </div>
