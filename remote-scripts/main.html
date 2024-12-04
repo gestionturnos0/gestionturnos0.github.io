@@ -1,0 +1,27 @@
+<div>
+    <br>
+    <label for="otp">OTP (opcional):</label>
+    <input type="text" name="otp" id="otp"></input>
+    <br>
+    <label for="booking-day-calendar">Fecha de Intento:</label>
+    <input type="date" name="booking-day-calendar" id="booking-day-calendar"></input>
+    <button onclick="submitForm()" class="button">Enviar</button>
+
+    <br>
+    <hr>
+    <br>
+
+    Formulario: <span id="status-form"></span>    
+
+    <hr>
+
+    Intentos:
+    <div id="attempts" style="overflow-y: scroll; height:300px;">
+        <!--
+        <div>
+            <label style="display: inline;">Intento 1:</label>
+            <span id="status-attempt-1">...</span>
+        </div>
+        -->
+    </div>
+</div>
