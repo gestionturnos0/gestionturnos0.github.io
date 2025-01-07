@@ -3,7 +3,7 @@ container.innerHTML = '';
 
 container.innerHTML = `
 <form action="https://prenotami.esteri.it/Services/Booking/4685" enctype="multipart/form-data" id="bookingForm"
-    method="post">    
+    method="post">
     <div class="container" id="div-container">
 
         <h1 class="heading-container" id="ServizioDescrizione">Servizio rilascio passaporti</h1>
@@ -16,7 +16,9 @@ container.innerHTML = `
 
         <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
             <div id="divTitolo">Prenotazione Singola</div>
-            <div id="divDettaglio"></div>
+            <div id="divDettaglio">
+
+                Stai prenotando per 1 Appuntamento</div>
             <div id="divAppuntamenti">
                 <ul>
                     <li></li>
@@ -1776,7 +1778,7 @@ container.innerHTML = `
             <input type="text" placeholder="OTP" id="otp-input" name="otp-input" class="name form-control"
                 style="margin-bottom:20px;" required="">
             <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
-            <img id="otp-loader" src="./MDZ Pass 26-11_files/loading.GIF" alt=""
+            <img id="otp-loader" src="./Booking pasaporte mdz - 7-1_files/loading.GIF" alt=""
                 style="height:50px;margin-left:20px;display:none;">
             <div id="IdOtpSent" style="display:none; color:green;">
                 <p>Nuovo codice inviato!</p>
