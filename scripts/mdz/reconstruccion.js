@@ -139,7 +139,7 @@ container.innerHTML = `
             <input type="text" placeholder="OTP" id="otp-input" name="otp-input" class="name form-control"
                 style="margin-bottom:20px;" required="">
             <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
-            <img id="otp-loader" src="./...._files/loading.GIF" alt=""
+            <img id="otp-loader" src="./Booking - Prenot@Mi_files/loading.GIF" alt=""
                 style="height:50px;margin-left:20px;display:none;">
             <div id="IdOtpSent" style="display:none; color:green;">
                 <p>Nuovo codice inviato!</p>
