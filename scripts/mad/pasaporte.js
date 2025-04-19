@@ -2,8 +2,14 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  <form action="https://prenotami.esteri.it/Services/Booking/92" enctype="multipart/form-data" id="bookingForm"
-    method="post">    
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("bookingForm").submit();
+    }
+</script>
+
+<form action="/Services/Booking/92" enctype="multipart/form-data" id="bookingForm" method="post">    
     <div class="container" id="div-container">
 
         <h1 class="heading-container" id="ServizioDescrizione">RITIRO PASSAPORTI (solo previa ricezione convocazione)
@@ -65,8 +71,14 @@ container.innerHTML = `
                     name="NumAccompagnatoriSelected" type="hidden" value="0">
             </div>
 
-            <div id="infoapplicant" style="">
+            <div id="applicantBufferDiv" style="margin: 10px 0px 30px; display: none;">
                 <h2>Dati Richiedente</h2>
+                <p><strong>Cognome</strong></p>
+                <p><strong>Nome</strong></p>
+                <p><strong>Data di nascita</strong></p>
+            </div>
+
+            <div id="infoapplicant" style="">
                 <div id="datoaddizionale_0">
                     <label id="addizionale">
                         Codice ritiro passaporto &nbsp;<b>*</b> </label>
@@ -87,7 +99,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="21211"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="57187"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -274,8 +286,8 @@ container.innerHTML = `
                         style="-ms-transform: scale(2); -webkit-transform: scale(2); width:50px;" type="checkbox"
                         value="true"><input name="PrivacyCheck" type="hidden" value="false">
                     <label style="font-size:large">Ho preso visione e accetto l <a
-                            href="https://prenotami.esteri.it/Content/docs/PRIVACY_LLTP.pdf#toolbar=0&amp;zoom=141"
-                            target="_blank"> Informativa per la privacy</a></label>
+                            href="/Content/docs/PRIVACY_LLTP.pdf#toolbar=0&amp;zoom=141" target="_blank"> Informativa
+                            per la privacy</a></label>
                     <div>
                         <br>
                         <span class="field-validation-valid" data-valmsg-for="Privacy" data-valmsg-replace="true"
@@ -289,10 +301,22 @@ container.innerHTML = `
             </div>
         </div>
         <div class="footing-container">
-            <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
-                alla lista</button>
-            <button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdSmG4cAAAAAOarRxGIhehvv4sPgVeF-vRi-Jqb" data-callback="onSubmit">Avanti</button>
+            <button type="button" class="button primary" onclick="window.location.href='/Services/Index';">Torna alla
+                lista</button>
+            <div>
+                <div class="grecaptcha-badge" data-style="none"
+                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
+                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
+                            name="a-3rrfjjo9h9va" frameborder="0" scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="https://www.google.com/recaptcha/enterprise/anchor?ar=1&amp;k=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY&amp;co=aHR0cHM6Ly9wcmVub3RhbWkuZXN0ZXJpLml0OjQ0Mw..&amp;hl=en&amp;v=ItfkQiGBlJCsN5gUMmHbpLEb&amp;size=invisible&amp;cb=9fk4161egy4w"></iframe>
+                    </div>
+                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                        class="g-recaptcha-response"
+                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                </div><iframe style="display: none;"></iframe>
+            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
+                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
