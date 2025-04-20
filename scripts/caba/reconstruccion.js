@@ -2,6 +2,13 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("bookingForm").submit();
+    }
+</script>
+
 <form action="https://prenotami.esteri.it/Services/Booking/224" enctype="multipart/form-data" id="bookingForm"
     method="post">    
     <div class="container" id="div-container">
@@ -9,14 +16,16 @@ container.innerHTML = `
         <h1 class="heading-container" id="ServizioDescrizione">Ricostruzione Cittadinanza</h1>
         <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden" value="Ricostruzione Cittadinanza">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
-            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="False">
+            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="True">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
             name="isWaitingListEnabled" type="hidden" value="False">
 
 
         <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
-            <div id="divTitolo"></div>
-            <div id="divDettaglio"></div>
+            <div id="divTitolo">Prenotazione Singola</div>
+            <div id="divDettaglio">
+
+                Stai prenotando per 1 Appuntamento</div>
             <div id="divAppuntamenti">
                 <ul>
                     <li></li>
@@ -35,7 +44,7 @@ container.innerHTML = `
                     name="IDServizioErogato" type="hidden" value="224">
                 <label>Tipo Prenotazione</label>
                 <select id="typeofbookingddl">
-                    <option value="1">Reserva unica</option>
+                    <option value="1">Prenotazione Singola</option>
                 </select>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
                     data-val-required="The IdTipoPrenotazione field is required." id="hiddenTipoPrenotazione"
@@ -56,8 +65,14 @@ container.innerHTML = `
                     name="NumAccompagnatoriSelected" type="hidden" value="0">
             </div>
 
-            <div id="infoapplicant" style="display:none">
+            <div id="applicantBufferDiv" style="margin: 10px 0px 30px; display: none;">
                 <h2>Dati Richiedente</h2>
+                <p><strong>Cognome</strong></p>
+                <p><strong>Nome</strong></p>
+                <p><strong>Data di nascita</strong></p>
+            </div>
+
+            <div id="infoapplicant" style="display:none">
             </div>
 
             <div id="ifMultiple" style="display: none;">
@@ -74,9 +89,9 @@ container.innerHTML = `
             <input type="text" placeholder="OTP" id="otp-input" name="otp-input" class="name form-control"
                 style="margin-bottom:20px;" required="">
             <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
-            <img id="otp-loader" src="./Bookingbsas - Prenot@Mi_files/loading.GIF" alt=""
-                style="height:50px;margin-left:20px;display:none;">
-            <div id="IdOtpSent" style="display:none; color:green;">
+            <img id="otp-loader" src="./Booking - Prenot@Mi_files/loading.GIF" alt=""
+                style="height: 50px; margin-left: 20px; display: none;">
+            <div id="IdOtpSent" style="display: block; color: green;">
                 <p>Nuovo codice inviato!</p>
             </div>
             <div id="IdOtpInvalid" style="display: none; color: red;">
@@ -111,8 +126,19 @@ container.innerHTML = `
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-            <button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdSmG4cAAAAAOarRxGIhehvv4sPgVeF-vRi-Jqb" data-callback="onSubmit">Avanti</button>
+            <div>
+                <div class="grecaptcha-badge" data-style="none"
+                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
+                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
+                            name="a-7n578uvhqy3" frameborder="0" scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="./Booking - Prenot@Mi_files/anchor.html"></iframe></div>
+                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                        class="g-recaptcha-response"
+                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                </div><iframe style="display: none;"></iframe>
+            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
+                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
