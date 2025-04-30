@@ -2,14 +2,21 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
+ <script>
+     function onSubmit(token) {
+         document.getElementById("bookingForm").submit();
+     }
+ </script>
+ 
 <form action="https://prenotami.esteri.it/Services/Booking/5291" enctype="multipart/form-data" id="bookingForm"
     method="post">    
     <div class="container" id="div-container">
 
-        <h1 class="heading-container" id="ServizioDescrizione">Servizio trattazione pratiche cittadinanza per
-            discendenza</h1>
+        <h1 class="heading-container" id="ServizioDescrizione">Cittadinanza IURE SANGUINIS per FIGLI e NIPOTI di
+            ITALIANI NATI IN ITALIA </h1>
         <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden"
-            value="Servizio trattazione pratiche cittadinanza per discendenza">
+            value="Cittadinanza IURE SANGUINIS per FIGLI e NIPOTI di ITALIANI NATI IN ITALIA ">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
             id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="True">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
@@ -89,7 +96,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="68012"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="76830"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -112,12 +119,12 @@ container.innerHTML = `
                         id="DocumentiPrenotante_0___Obbligatorio" name="DocumentiPrenotante[0]._Obbligatorio"
                         type="hidden" value="True">
                     <span class="field-validation-valid validator-required" data-valmsg-for="Required_0"
-                        data-valmsg-replace="true" style="color:red"></span>
+                        data-valmsg-replace="true" style="color: red; display: none;"></span>
                     <span class="field-validation-valid validator-required" data-valmsg-for="Extension_0"
                         data-valmsg-replace="true" style="color:red"></span>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="DocumentiPrenotante_0___Id"
-                        name="DocumentiPrenotante[0]._Id" type="hidden" value="15835">
+                        name="DocumentiPrenotante[0]._Id" type="hidden" value="19387">
                 </div>
                 <input data-val="true" data-val-number="Il campo IDTipoDocumento deve essere un numero."
                     data-val-required="The IDTipoDocumento field is required." id="hiddenIdDocADD_0"
@@ -139,7 +146,7 @@ container.innerHTML = `
             <input type="text" placeholder="OTP" id="otp-input" name="otp-input" class="name form-control"
                 style="margin-bottom:20px;" required="">
             <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
-            <img id="otp-loader" src="./Booking - Prenot@Mi_files/loading.GIF" alt=""
+            <img id="otp-loader" src="./CARLITOS BOTON_files/loading.GIF" alt=""
                 style="height:50px;margin-left:20px;display:none;">
             <div id="IdOtpSent" style="display:none; color:green;">
                 <p>Nuovo codice inviato!</p>
@@ -176,8 +183,19 @@ container.innerHTML = `
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-            <button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdSmG4cAAAAAOarRxGIhehvv4sPgVeF-vRi-Jqb" data-callback="onSubmit">Avanti</button>
+            <div>
+                <div class="grecaptcha-badge" data-style="none"
+                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
+                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
+                            name="a-6nkgufcj1ts8" frameborder="0" scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="./CARLITOS BOTON_files/anchor.html"></iframe></div>
+                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                        class="g-recaptcha-response"
+                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                </div>
+            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
+                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
