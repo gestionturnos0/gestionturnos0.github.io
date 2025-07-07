@@ -2,6 +2,13 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
+  <script>
+      function onSubmit(token) {
+          document.getElementById("bookingForm").submit();
+      }
+  </script>
+  
 <form action="https://prenotami.esteri.it/Services/Booking/104" enctype="multipart/form-data" id="bookingForm"
     method="post">    
     <div class="container" id="div-container">
@@ -920,8 +927,19 @@ container.innerHTML = `
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-            <button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdSmG4cAAAAAOarRxGIhehvv4sPgVeF-vRi-Jqb" data-callback="onSubmit">Avanti</button>
+             <div>
+                <div class="grecaptcha-badge" data-style="none"
+                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
+                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
+                            name="a-cdwbjqn9qqau" frameborder="0" scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="./anchor.html"></iframe></div>
+                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                        class="g-recaptcha-response"
+                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                </div><iframe style="display: none;" src="./.html"></iframe>
+            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
+                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
