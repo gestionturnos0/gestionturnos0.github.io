@@ -10,7 +10,7 @@ container.innerHTML = `
   </script>
   
 <form action="https://prenotami.esteri.it/Services/Booking/5657" enctype="multipart/form-data" id="bookingForm"
-    method="post">    
+    method="post">
     <div class="container" id="div-container">
 
         <h1 class="heading-container" id="ServizioDescrizione">Ricostruzione Iure Sanguinis</h1>
@@ -23,7 +23,9 @@ container.innerHTML = `
 
         <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
             <div id="divTitolo">Prenotazione Singola</div>
-            <div id="divDettaglio"></div>
+            <div id="divDettaglio">
+
+                Stai prenotando per 1 Appuntamento</div>
             <div id="divAppuntamenti">
                 <ul>
                     <li></li>
@@ -91,7 +93,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="79930"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="83096"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -128,7 +130,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId1"
-                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="79931"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="83097"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -158,7 +160,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId2"
-                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="79932"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="83098"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -186,7 +188,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId3"
-                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="79933"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="83099"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -216,7 +218,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="79934"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="83100"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -288,16 +290,17 @@ container.innerHTML = `
                 <div class="grecaptcha-badge" data-style="none"
                     style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
                     <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
-                            name="a-cdwbjqn9qqau" frameborder="0" scrolling="no"
+                            name="a-l1ig41r62iia" frameborder="0" scrolling="no"
                             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                            src="./anchor.html"></iframe></div>
+                            src="./Booking - Prenot@Mi_files/anchor.html"></iframe></div>
                     <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
                         class="g-recaptcha-response"
                         style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                </div><iframe style="display: none;" src="./.html"></iframe>
+                </div><iframe style="display: none;" src="./Booking - Prenot@Mi_files/saved_resource(2).html"></iframe>
             </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
                 data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
 `;
+
