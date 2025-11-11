@@ -181,12 +181,24 @@ container.innerHTML = `
             </div>
         </div>
         <div class="footing-container">
-            <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
+                        <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-            <!--<button type="submit" id="btnAvanti" class="button primary g-recaptcha" data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>-->
-            <button type="button" id="btnAvanti" class="button primary">Avanti</button>
+            <div>
+                <div class="grecaptcha-badge" data-style="none"
+                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
+                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
+                            name="a-l1ig41r62iia" frameborder="0" scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="./Booking - Prenot@Mi_files/anchor.html"></iframe></div>
+                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                        class="g-recaptcha-response"
+                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
+                </div><iframe style="display: none;" src="./Booking - Prenot@Mi_files/saved_resource(2).html"></iframe>
+            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
+                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
         </div>
     </div>
 </form>
 `;
+
 
