@@ -2,13 +2,13 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
-<script>
-    function onSubmit(token) {
-        document.getElementById("bookingForm").submit();
-    }
-</script>
-
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY"></script>
+  <script>
+      function onSubmit(token) {
+          document.getElementById("bookingForm").submit();
+      }
+  </script>
+  
 <form action="https://prenotami.esteri.it/Services/Booking/5775" enctype="multipart/form-data" id="bookingForm"
     method="post">
     <link href="./CIE BOOK_files/Site.css" rel="stylesheet">
@@ -872,4 +872,3 @@ container.innerHTML = `
     </div>
 </form>
 `;
-
