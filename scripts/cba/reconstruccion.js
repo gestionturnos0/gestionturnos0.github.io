@@ -9,8 +9,9 @@ container.innerHTML = `
       }
   </script>
   
-<form action="https://prenotami.esteri.it/Services/Booking/5657" enctype="multipart/form-data" id="bookingForm"
+  <form action="https://prenotami.esteri.it/Services/Booking/5657" enctype="multipart/form-data" id="bookingForm"
     method="post">
+    <link href="./Booking - Prenot@Mi_files/Site.css" rel="stylesheet">
     <div class="container" id="div-container">
 
         <h1 class="heading-container" id="ServizioDescrizione">Ricostruzione Iure Sanguinis</h1>
@@ -21,15 +22,11 @@ container.innerHTML = `
             name="isWaitingListEnabled" type="hidden" value="False">
 
 
-        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
-            <div id="divTitolo">Prenotazione Singola</div>
-            <div id="divDettaglio">
-
-                Stai prenotando per 1 Appuntamento</div>
+        <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="display:none;">
+            <div id="divTitolo"></div>
+            <div id="divDettaglio"></div>
             <div id="divAppuntamenti">
-                <ul>
-                    <li></li>
-                </ul>
+                <ul></ul>
             </div>
         </div>
         <div>
@@ -43,12 +40,10 @@ container.innerHTML = `
                     data-val-required="The IDServizioErogato field is required." id="IDServizioErogato"
                     name="IDServizioErogato" type="hidden" value="5657">
                 <label>Tipo Prenotazione</label>
-                <select id="typeofbookingddl">
-                    <option value="1">Prenotazione Singola</option>
-                </select>
+                <select id="typeofbookingddl"></select>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
                     data-val-required="The IdTipoPrenotazione field is required." id="hiddenTipoPrenotazione"
-                    name="IdTipoPrenotazione" type="hidden" value="1">
+                    name="IdTipoPrenotazione" type="hidden" value="0">
                 <input data-val="true" data-val-number="Il campo NumMaxAccompagnatori deve essere un numero."
                     data-val-required="The NumMaxAccompagnatori field is required." id="hiddenNumMax"
                     name="NumMaxAccompagnatori" type="hidden" value="0">
@@ -65,11 +60,11 @@ container.innerHTML = `
                     name="NumAccompagnatoriSelected" type="hidden" value="0">
             </div>
 
-            <div id="applicantBufferDiv" style="margin: 10px 0px 30px; display: none;">
+            <div id="applicantBufferDiv" style="margin:10px 0px 30px 0px;">
                 <h2>Dati Richiedente</h2>
-                <p><strong>Cognome</strong></p>
-                <p><strong>Nome</strong></p>
-                <p><strong>Data di nascita</strong></p>
+                <p><strong>Cognome</strong></p>Eduardo Alejandro
+                <p><strong>Nome</strong></p>Moyano
+                <p><strong>Data di nascita</strong></p>21/06/1962
             </div>
 
             <div id="infoapplicant" style="">
@@ -93,7 +88,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="83096"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="85751"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -109,15 +104,6 @@ container.innerHTML = `
                         name="DatiAddizionaliPrenotante[1]._Descrizione" type="hidden" value="Stato civile">
                     <select id="ddls_1" data-index="1" onchange="ControloSelect(this)">
                         <option value="0"> </option>
-                        <option value="13">Coniugato/a</option>
-                        <option value="14">Divorziato/a</option>
-                        <option value="15">Vedovo/a</option>
-                        <option value="16">Celibe/Nubile</option>
-                        <option value="17">Separato/a</option>
-                        <option value="18">Unito/a Civilmente</option>
-                        <option value="19">Separato/a da Un. Civ.</option>
-                        <option value="20">Divorziato/a da Un. Civ.</option>
-                        <option value="21">Vedovo/a da Un. Civ.</option>
                     </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                         id="DatiAddizionaliPrenotante_1___Obbligatorio"
                         name="DatiAddizionaliPrenotante[1]._Obbligatorio" type="hidden" value="True">
@@ -130,7 +116,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId1"
-                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="83097"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="85752"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -153,14 +139,14 @@ container.innerHTML = `
                         name="DatiAddizionaliPrenotante[2]._Obbligatorio" type="hidden" value="True">
                     <div>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionale_2"
-                                data-valmsg-replace="true" style="color:red"></span></p>
+                                data-valmsg-replace="true" style="color: red; display: none;"></span></p>
                         <p><span class="field-validation-valid" data-valmsg-for="addizionaleRegEx_2"
                                 data-valmsg-replace="true" style="color:red"></span></p>
                     </div>
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId2"
-                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="83098"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="85753"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -188,7 +174,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId3"
-                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="83099"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="85754"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -218,7 +204,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="83100"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="85755"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -235,7 +221,7 @@ container.innerHTML = `
                     name="DatiAddizionaliPrenotante[2]._idSelezionato" type="hidden" value="0">
             </div>
 
-            <div id="ifMultiple" style="display: none;">
+            <div id="ifMultiple">
             </div>
         </div>
         <div>
@@ -250,8 +236,8 @@ container.innerHTML = `
                 style="margin-bottom:20px;" required="">
             <button type="button" class="button primary" id="otp-send" onclick="sendOTP();">Invia nuovo codice</button>
             <img id="otp-loader" src="./Booking - Prenot@Mi_files/loading.GIF" alt=""
-                style="height:50px;margin-left:20px;display:none;">
-            <div id="IdOtpSent" style="display:none; color:green;">
+                style="height: 50px; margin-left: 20px; display: none;">
+            <div id="IdOtpSent" style="display: block; color: green;">
                 <p>Nuovo codice inviato!</p>
             </div>
             <div id="IdOtpInvalid" style="display: none; color: red;">
@@ -286,19 +272,8 @@ container.innerHTML = `
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-            <div>
-                <div class="grecaptcha-badge" data-style="none"
-                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
-                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
-                            name="a-l1ig41r62iia" frameborder="0" scrolling="no"
-                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                            src="./Booking - Prenot@Mi_files/anchor.html"></iframe></div>
-                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
-                        class="g-recaptcha-response"
-                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                </div><iframe style="display: none;" src="./Booking - Prenot@Mi_files/saved_resource(2).html"></iframe>
-            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
+            <!--<button type="submit" id="btnAvanti" class="button primary g-recaptcha" data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>-->
+            <button type="button" id="btnAvanti" class="button primary">Avanti</button>
         </div>
     </div>
 </form>
