@@ -3889,7 +3889,7 @@ function getDropDownListsValues(_id, ddl, selectedValue) {
         0, //3
         0, //4
         0, //5
-        0, //6
+        [{"Disabled":false,"Group":null,"Selected":false,"Text":"Si","Value":"7"},{"Disabled":false,"Group":null,"Selected":false,"Text":"No","Value":"8"}], //6
         0, //7
         0, //8
         0, //9
