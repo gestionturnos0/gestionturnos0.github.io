@@ -10,22 +10,28 @@ container.innerHTML = `
   </script>
   
 <form action="https://prenotami.esteri.it/Services/Booking/104" enctype="multipart/form-data" id="bookingForm"
-    method="post">    
+    method="post">
     <div class="container" id="div-container">
+
+
+
 
         <h1 class="heading-container" id="ServizioDescrizione">Passaporti</h1>
         <input id="hiddenServizioDesc" name="ServizioDescrizione" type="hidden" value="Passaporti">
         <input data-val="true" data-val-required="The MessaggioRassicuranteWaitingList field is required."
-            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="False">
+            id="MessaggioRassicuranteWaitingList" name="MessaggioRassicuranteWaitingList" type="hidden" value="True">
         <input data-val="true" data-val-required="The isWaitingListEnabled field is required." id="isWaitingListEnabled"
             name="isWaitingListEnabled" type="hidden" value="False">
 
 
         <div id="divRiepilogoPrenotazione" class="riepilogoPrenotazione" style="">
-            <div id="divTitolo"></div>
+            <div id="divTitolo">Prenotazione Multipla</div>
             <div id="divDettaglio"></div>
             <div id="divAppuntamenti">
                 <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                     <li></li>
                 </ul>
             </div>
@@ -42,15 +48,19 @@ container.innerHTML = `
                     name="IDServizioErogato" type="hidden" value="104">
                 <label>Tipo Prenotazione</label>
                 <select id="typeofbookingddl">
+                    <option value="0"> </option>
                     <option value="1">Prenotazione Singola</option>
                     <option value="2">Prenotazione Multipla</option>
                 </select>
+                <span class="field-validation-valid" data-valmsg-for="addizionale_1" data-valmsg-replace="true"
+                    style="color: red; display: none;"></span>
                 <input data-val="true" data-val-number="Il campo IdTipoPrenotazione deve essere un numero."
                     data-val-required="The IdTipoPrenotazione field is required." id="hiddenTipoPrenotazione"
                     name="IdTipoPrenotazione" type="hidden" value="2">
                 <input data-val="true" data-val-number="Il campo NumMaxAccompagnatori deve essere un numero."
                     data-val-required="The NumMaxAccompagnatori field is required." id="hiddenNumMax"
                     name="NumMaxAccompagnatori" type="hidden" value="4">
+                <span id="tipoprenotazioneerror" style="display:none;color:red;">Campo Obbligatorio</span>
 
 
 
@@ -65,11 +75,14 @@ container.innerHTML = `
                 </select>
                 <input data-val="true" data-val-number="Il campo NumAccompagnatoriSelected deve essere un numero."
                     data-val-required="The NumAccompagnatoriSelected field is required." id="numAccSelected"
-                    name="NumAccompagnatoriSelected" type="hidden" value="3">
+                    name="NumAccompagnatoriSelected" type="hidden" value="1">
             </div>
 
-            <div id="applicantBufferDiv" style="margin: 10px 0px 30px; display: block;">
+            <div id="applicantBufferDiv" style="display: block; margin: 10px 0px 30px;">
                 <h2>Dati Richiedente</h2>
+                <p><strong>Cognome</strong></p>Daniela Carla
+                <p><strong>Nome</strong></p>Staude
+                <p><strong>Data di nascita</strong></p>26/02/1977
             </div>
 
             <div id="infoapplicant" style="">
@@ -93,7 +106,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId0"
-                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="67720"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[0]._Id" type="hidden" value="93419"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_0"
                     name="DatiAddizionaliPrenotante[0]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -123,7 +136,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId1"
-                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="67721"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[1]._Id" type="hidden" value="93420"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_1"
                     name="DatiAddizionaliPrenotante[1]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -160,7 +173,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId2"
-                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="67722"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[2]._Id" type="hidden" value="93421"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_2"
                     name="DatiAddizionaliPrenotante[2]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -191,7 +204,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId3"
-                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="67723"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[3]._Id" type="hidden" value="93422"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_3"
                     name="DatiAddizionaliPrenotante[3]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -219,7 +232,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                     data-val-required="The _Id field is required." id="hiddenId4"
-                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="67724"><input data-val="true"
+                    name="DatiAddizionaliPrenotante[4]._Id" type="hidden" value="93423"><input data-val="true"
                     data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                     data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADD_4"
                     name="DatiAddizionaliPrenotante[4]._TipoDatoAddizionale.IDTipoDatoAddizionale" type="hidden"
@@ -239,7 +252,7 @@ container.innerHTML = `
                     name="DatiAddizionaliPrenotante[3]._idSelezionato" type="hidden" value="0">
             </div>
 
-            <div id="ifMultiple" style="">
+            <div id="ifMultiple">
                 <div id="divCompanion_0" style="display: block;">
                     <h2>Dati richiedente aggiuntivo 1</h2>
                     <div>
@@ -272,21 +285,7 @@ container.innerHTML = `
                             style="color:red"></span>
                     </div>
                     Relazione di parentela
-                    <div id="ddlRelation_0"><select id="TypeOfRelationDDL0" data-index="0">
-                            <option></option>
-                            <option value="2">Coniuge</option>
-                            <option value="11">Coniuge divorziato</option>
-                            <option value="1">Coniuge separato</option>
-                            <option value="9">Convivente</option>
-                            <option value="8">Figlio di altro coniuge</option>
-                            <option value="5">Figlio/a</option>
-                            <option value="7">Fratello/Sorella</option>
-                            <option value="3">Genero/Nuora</option>
-                            <option value="6">Genitore</option>
-                            <option value="12">Minore in affidamento</option>
-                            <option value="10">Nipote</option>
-                            <option value="4">Suocero/Suocera</option>
-                        </select></div>
+                    <div id="ddlRelation_0"><select id="TypeOfRelationDDL0" data-index="0"></select></div>
                     <div id="divCompanionAdd_0_0">
                         <label>
                             Figli minorenni &nbsp;<b>*</b> </label>
@@ -295,8 +294,6 @@ container.innerHTML = `
                             value="Figli minorenni">
                         <select id="ddlsAcc_0_0" data-index="0" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="11">Si</option>
-                            <option value="12">No</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_0__DatiAddizionaliAccompagnatore_0___Obbligatorio"
                             name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden"
@@ -310,7 +307,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67725"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="93424"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -329,15 +326,6 @@ container.innerHTML = `
                             value="Stato civile">
                         <select id="ddlsAcc_0_1" data-index="1" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="13">Coniugato/a</option>
-                            <option value="14">Divorziato/a</option>
-                            <option value="15">Vedovo/a</option>
-                            <option value="16">Celibe/Nubile</option>
-                            <option value="17">Separato/a</option>
-                            <option value="18">Unito/a Civilmente</option>
-                            <option value="19">Separato/a da Un. Civ.</option>
-                            <option value="20">Divorziato/a da Un. Civ.</option>
-                            <option value="21">Vedovo/a da Un. Civ.</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_0__DatiAddizionaliAccompagnatore_1___Obbligatorio"
                             name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden"
@@ -351,7 +339,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="67726"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="93425"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -384,7 +372,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc0"
-                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="67727"><input
+                        name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="93426"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[0].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -398,7 +386,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
                     id="hiddenParentela_0" name="Accompagnatori[0].IdTipoParentela" type="hidden" value="">
-                <div id="divCompanion_1" style="display: block;">
+                <div id="divCompanion_1" style="display: none;">
                     <h2>Dati richiedente aggiuntivo 2</h2>
                     <div>
                         Cognome *
@@ -430,21 +418,8 @@ container.innerHTML = `
                             style="color:red"></span>
                     </div>
                     Relazione di parentela
-                    <div id="ddlRelation_1"><select id="TypeOfRelationDDL1" data-index="1">
-                            <option></option>
-                            <option value="2">Coniuge</option>
-                            <option value="11">Coniuge divorziato</option>
-                            <option value="1">Coniuge separato</option>
-                            <option value="9">Convivente</option>
-                            <option value="8">Figlio di altro coniuge</option>
-                            <option value="5">Figlio/a</option>
-                            <option value="7">Fratello/Sorella</option>
-                            <option value="3">Genero/Nuora</option>
-                            <option value="6">Genitore</option>
-                            <option value="12">Minore in affidamento</option>
-                            <option value="10">Nipote</option>
-                            <option value="4">Suocero/Suocera</option>
-                        </select></div>
+                    <div id="ddlRelation_1">
+                    </div>
                     <div id="divCompanionAdd_1_0">
                         <label>
                             Figli minorenni &nbsp;<b>*</b> </label>
@@ -453,8 +428,6 @@ container.innerHTML = `
                             value="Figli minorenni">
                         <select id="ddlsAcc_1_0" data-index="0" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="11">Si</option>
-                            <option value="12">No</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_1__DatiAddizionaliAccompagnatore_0___Obbligatorio"
                             name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden"
@@ -468,7 +441,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67725"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="93424"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -487,15 +460,6 @@ container.innerHTML = `
                             value="Stato civile">
                         <select id="ddlsAcc_1_1" data-index="1" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="13">Coniugato/a</option>
-                            <option value="14">Divorziato/a</option>
-                            <option value="15">Vedovo/a</option>
-                            <option value="16">Celibe/Nubile</option>
-                            <option value="17">Separato/a</option>
-                            <option value="18">Unito/a Civilmente</option>
-                            <option value="19">Separato/a da Un. Civ.</option>
-                            <option value="20">Divorziato/a da Un. Civ.</option>
-                            <option value="21">Vedovo/a da Un. Civ.</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_1__DatiAddizionaliAccompagnatore_1___Obbligatorio"
                             name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden"
@@ -509,7 +473,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="67726"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="93425"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -542,7 +506,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc1"
-                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="67727"><input
+                        name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="93426"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[1].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -556,7 +520,7 @@ container.innerHTML = `
                 </div>
                 <input data-val="true" data-val-number="Il campo IdTipoParentela deve essere un numero."
                     id="hiddenParentela_1" name="Accompagnatori[1].IdTipoParentela" type="hidden" value="">
-                <div id="divCompanion_2" style="display: block;">
+                <div id="divCompanion_2" style="display: none;">
                     <h2>Dati richiedente aggiuntivo 3</h2>
                     <div>
                         Cognome *
@@ -588,21 +552,8 @@ container.innerHTML = `
                             style="color:red"></span>
                     </div>
                     Relazione di parentela
-                    <div id="ddlRelation_2"><select id="TypeOfRelationDDL2" data-index="2">
-                            <option></option>
-                            <option value="2">Coniuge</option>
-                            <option value="11">Coniuge divorziato</option>
-                            <option value="1">Coniuge separato</option>
-                            <option value="9">Convivente</option>
-                            <option value="8">Figlio di altro coniuge</option>
-                            <option value="5">Figlio/a</option>
-                            <option value="7">Fratello/Sorella</option>
-                            <option value="3">Genero/Nuora</option>
-                            <option value="6">Genitore</option>
-                            <option value="12">Minore in affidamento</option>
-                            <option value="10">Nipote</option>
-                            <option value="4">Suocero/Suocera</option>
-                        </select></div>
+                    <div id="ddlRelation_2">
+                    </div>
                     <div id="divCompanionAdd_2_0">
                         <label>
                             Figli minorenni &nbsp;<b>*</b> </label>
@@ -611,8 +562,6 @@ container.innerHTML = `
                             value="Figli minorenni">
                         <select id="ddlsAcc_2_0" data-index="0" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="11">Si</option>
-                            <option value="12">No</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_2__DatiAddizionaliAccompagnatore_0___Obbligatorio"
                             name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden"
@@ -626,7 +575,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67725"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="93424"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -645,15 +594,6 @@ container.innerHTML = `
                             value="Stato civile">
                         <select id="ddlsAcc_2_1" data-index="1" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="13">Coniugato/a</option>
-                            <option value="14">Divorziato/a</option>
-                            <option value="15">Vedovo/a</option>
-                            <option value="16">Celibe/Nubile</option>
-                            <option value="17">Separato/a</option>
-                            <option value="18">Unito/a Civilmente</option>
-                            <option value="19">Separato/a da Un. Civ.</option>
-                            <option value="20">Divorziato/a da Un. Civ.</option>
-                            <option value="21">Vedovo/a da Un. Civ.</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_2__DatiAddizionaliAccompagnatore_1___Obbligatorio"
                             name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden"
@@ -667,7 +607,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="67726"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="93425"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -700,7 +640,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc2"
-                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="67727"><input
+                        name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="93426"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[2].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -756,8 +696,6 @@ container.innerHTML = `
                             value="Figli minorenni">
                         <select id="ddlsAcc_3_0" data-index="0" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="11">Si</option>
-                            <option value="12">No</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_3__DatiAddizionaliAccompagnatore_0___Obbligatorio"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Obbligatorio" type="hidden"
@@ -771,7 +709,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="67725"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._Id" type="hidden" value="93424"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_0"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[0]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -790,15 +728,6 @@ container.innerHTML = `
                             value="Stato civile">
                         <select id="ddlsAcc_3_1" data-index="1" onchange="ControloSelect(this)">
                             <option value="0"> </option>
-                            <option value="13">Coniugato/a</option>
-                            <option value="14">Divorziato/a</option>
-                            <option value="15">Vedovo/a</option>
-                            <option value="16">Celibe/Nubile</option>
-                            <option value="17">Separato/a</option>
-                            <option value="18">Unito/a Civilmente</option>
-                            <option value="19">Separato/a da Un. Civ.</option>
-                            <option value="20">Divorziato/a da Un. Civ.</option>
-                            <option value="21">Vedovo/a da Un. Civ.</option>
                         </select><input data-val="true" data-val-required="The _Obbligatorio field is required."
                             id="Accompagnatori_3__DatiAddizionaliAccompagnatore_1___Obbligatorio"
                             name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Obbligatorio" type="hidden"
@@ -812,7 +741,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="67726"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._Id" type="hidden" value="93425"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_1"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[1]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -845,7 +774,7 @@ container.innerHTML = `
                     </div>
                     <input data-val="true" data-val-number="Il campo _Id deve essere un numero."
                         data-val-required="The _Id field is required." id="hiddenIdAcc3"
-                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="67727"><input
+                        name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._Id" type="hidden" value="93426"><input
                         data-val="true" data-val-number="Il campo IDTipoDatoAddizionale deve essere un numero."
                         data-val-required="The IDTipoDatoAddizionale field is required." id="hiddenIdDatoADDAcc_2"
                         name="Accompagnatori[3].DatiAddizionaliAccompagnatore[2]._TipoDatoAddizionale.IDTipoDatoAddizionale"
@@ -903,43 +832,32 @@ container.innerHTML = `
 
         <div>
             <h2>Informativa sulla Privacy</h2>
-            <div>
-                <div class="row">
+            <div class="row" style="margin-bottom:0">
+                <div class="col-md-2" style="padding:0">
+
                     <input data-val="true" data-val-required="The PrivacyCheck field is required." id="PrivacyCheck"
-                        name="PrivacyCheck" required=""
-                        style="-ms-transform: scale(2); -webkit-transform: scale(2); width:50px;" type="checkbox"
+                        name="PrivacyCheck" required="" style="width:30px;height:30px;" type="checkbox"
                         value="true"><input name="PrivacyCheck" type="hidden" value="false">
-                    <label style="font-size:large">Ho preso visione e accetto l <a
+                </div>
+                <div class="col-md-10" style="padding:0">
+                    <label style="font-size:large"> Ho preso visione e accetto l <a
                             href="https://prenotami.esteri.it/Content/docs/PRIVACY_LLTP.pdf#toolbar=0&amp;zoom=141"
                             target="_blank"> Informativa per la privacy</a></label>
-                    <div>
-                        <br>
-                        <span class="field-validation-valid" data-valmsg-for="Privacy" data-valmsg-replace="true"
-                            style="text-align:left; color:red;"></span>
-                        <span tipoprenotazionegiainserito="Tipo di prenotazione già effettuata per questo servizio"
-                            class="field-validation-valid" data-valmsg-for="Invalid booking" data-valmsg-replace="true"
-                            style="text-align:left; color:red;"></span>
-
-                    </div>
                 </div>
+            </div>
+            <div class="col-md-12">
+                <span class="field-validation-valid" data-valmsg-for="Privacy" data-valmsg-replace="true"
+                    style="text-align:left; color:red"></span>
+                <span tipoprenotazionegiainserito="Tipo di prenotazione già effettuata per questo servizio"
+                    class="field-validation-valid" data-valmsg-for="Invalid booking" data-valmsg-replace="true"
+                    style="text-align:left; color:red;"></span>
             </div>
         </div>
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
                 alla lista</button>
-             <div>
-                <div class="grecaptcha-badge" data-style="none"
-                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
-                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
-                            name="a-cdwbjqn9qqau" frameborder="0" scrolling="no"
-                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                            src="./anchor.html"></iframe></div>
-                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
-                        class="g-recaptcha-response"
-                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                </div><iframe style="display: none;" src="./.html"></iframe>
-            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
+            <!--<button type="submit" id="btnAvanti" class="button primary g-recaptcha" data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>-->
+            <button type="button" id="btnAvanti" class="button primary">Avanti</button>
         </div>
     </div>
 </form>
