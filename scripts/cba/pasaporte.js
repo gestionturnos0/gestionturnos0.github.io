@@ -711,22 +711,18 @@ container.innerHTML = `
                     style="text-align:left; color:red;"></span>
             </div>
         </div>
+        <div class="cf-turnstile footing-container" data-sitekey="0x4AAAAAADh7TfpY_B5brT6O" data-theme="light"
+            data-callback="turnstileCallback" data-error-callback="turnstileError"
+            data-expired-callback="turnstileExpired" data-timeout-callback="turnstileTimeout">
+            <div><input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-fbt9t_response"
+                    value="1.nC5obALBAGkpg4cuWKzGUFPcOhp_UCnYYoUNDO0rJrEP8NictjJhx8hiFvE7ZvmYRzSnQbs4N8PeS540C2RNMBZrG9lAeY0-dMy1LnKO6AMofu43xAEWmTwEIn5ERa2ghoIzXIlTD-0tZUH18drwk1GOWqksloR7L-SULolbLd0gB0GUrVdo72p13RUzVTjuSxYE-0ew9bsy4aL3cOTQLb-i9a88P8xxPbTnoVpwNyzb49fuTm2sKZy-OJbBS7Y9FI8BxOwINwNEzElv_-TbxJa7pQl__q4nFXPSUbOMKy9nkKDrVKGamJPVgALMkn7yrz1NjyYVgGqA3m9AeYVV_QzwuQzzMFdxzIyw3b9K8Hw_2iPffY8PvXcu75p1Zw-p52--CuRWTcOJXG-J7y-JwB0LaUFkjyjC84ytastDknVCd8MzjeBYYPxYL1Qexu4VQ5wFFuTWeZtVKagQfVmzhBCTgI7csOGkTnKXBTT9tYZ0jvWpLQfP60YNgQTKKiCNBWclDHaHqwGqAYKundBo4p4w_Poz4F-tpn7P7lexyEesfb3FNXN4ZDTiT0RKBNFYN_NjYtmeAf1-rJ_3cDk3ZhFLGM9OsFmKvsMLlLO1GbMsHB8p2n6wrPzuKgRhB-v5ea2LTDk9SUkF5Mkmmvkrni-V9N0xbL6KGNKD0Omltn0.PZR9UZHpM32EmLNrw0TG-g.a6d3cf11d9ef538e2d414e55c6b507a1e8beded0b55f2501868346b15ab702f2">
+            </div>
+        </div>
         <div class="footing-container">
-            <button type="button" class="button primary" onclick="window.location.href=&#39;/Services/Index&#39;;">Torna
-                alla lista</button>
-             <div>
-                <div class="grecaptcha-badge" data-style="none"
-                    style="width: 256px; height: 60px; position: fixed; visibility: hidden;">
-                    <div class="grecaptcha-logo"><iframe title="reCAPTCHA" width="256" height="60" role="presentation"
-                            name="a-cdwbjqn9qqau" frameborder="0" scrolling="no"
-                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                            src="./anchor.html"></iframe></div>
-                    <div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response"
-                        class="g-recaptcha-response"
-                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-                </div><iframe style="display: none;" src="./.html"></iframe>
-            </div><button type="submit" id="btnAvanti" class="button primary g-recaptcha"
-                data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>
+            <button type="button" class="button primary" onclick="window.location.href='/Services/Index';">Torna alla
+                lista</button>
+            <!--<button type="submit" id="btnAvanti" class="button primary g-recaptcha" data-sitekey="6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY" data-callback="onSubmit">Avanti</button>-->
+            <button type="button" id="btnAvanti" class="button primary">Avanti</button>
         </div>
     </div>
 </form>
