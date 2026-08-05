@@ -12,6 +12,27 @@ try {
     console.log(exception)
 }
 
+$(document).ready(function () {
+    $('#btnRegister').prop('disabled', true);
+});
+function turnstileCallback() {
+    $('#btnAvanti').prop('disabled', false);
+    console.log('turnstileCallback');
+}
+function turnstileError() {
+    window.alert('Si &#232; verificato un errore durante l’elaborazione della richiesta');
+}
+function turnstileExpired() {
+    $('#btnAvanti').prop('disabled', true);
+    turnstile.reset();
+    console.log('turnstileExpired');
+}
+function turnstileTimeout() {
+    $('#btnAvanti').prop('disabled', true);
+    turnstile.reset();
+    console.log('turnstileTimeout');
+}
+
 var numDivCompanionsVisibile = 0;
 //$(document).ready(function () {
     $('#ServizioDescrizione').text($('#hiddenServizioDesc').val());
@@ -4324,6 +4345,19 @@ $('#ddlnumberofcompanions').change(function () {
     aggiornaDettaglioPrenotazione();
 });
 
+function getCaptchaToken() {
+    grecaptcha.enterprise.ready(async () => {
+        var token = null;
+        var retry = 0;
+        while ((typeof token == 'undefined' || token == null || token.replace(/ /g, '')=='') && retry < 3) {
+            retry++;
+            token = await grecaptcha.enterprise.execute('6LdkwrIqAAAAAC4NX-g_j7lEx9vh1rg94ZL2cFfY', { action: 'BOOKING' });
+        }
+        $('#bookingForm').append('<input type="hidden" name="g-recaptcha-response" value="' + token + '" />');
+        $('#bookingForm').submit();
+    });
+}
+
 
 function controlloFileCaricato(file) {
     id = file.id.split("_");
@@ -4370,32 +4404,69 @@ function ControloSelect(select) {
 }
 
 function sendOTP() {
-    document.getElementById("IdOtpSent").style.display = "none";
-    document.getElementById("IdOtpInvalid").style.display = "none";
-    $('#otp-send').prop('disabled', true);
-    $('#otp-loader').fadeIn(200, function () {
+        document.getElementById("IdOtpSent").style.display = "none";
+        document.getElementById("IdOtpInvalid").style.display = "none";
+        $('#otp-send').prop('disabled', true);
+        $('#otp-loader').fadeIn(200, function () {
         var xmlhttp;
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
+        if (window.XMLHttpRequest) { xmlhttp = new XMLHttpRequest(); }
+        else { xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); }
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 $('#otp-loader').fadeOut(200, function () {
                     $('#otp-send').prop('disabled', false);
                     if (xmlhttp.responseText == '"SENT"') {
                         document.getElementById("IdOtpSent").style.display = "block";
-                    } else {
-                        document.getElementById("IdOtpInvalid").style.display = "block";
+                        startOtpTimer(120);
                     }
+                    else { document.getElementById("IdOtpInvalid").style.display = "block"; }
                 });
             }
         }
-        xmlhttp.open("GET", '/BookingCalendar/GenerateOTP', true);
+        xmlhttp.open("GET", '/BookingCalendar/GenerateOTP?ServiceID=5659', true);
         xmlhttp.send();
-    });
-}
+        });
+        }
+
+        function startOtpTimer(wait) {
+            if (wait > 0) {
+                const button = document.getElementById("otp-send");
+                const timerLabel = document.getElementById("otp-timer-label");
+                const timerStrong = document.getElementById("otp-timer");
+
+                let remaining = wait;
+
+                // Disabilita il bottone
+                button.setAttribute("disabled", "disabled");
+
+                // Mostra il timer
+                timerLabel.style.display = "block";
+
+                // Imposta valore iniziale
+                timerStrong.textContent = remaining;
+
+                const interval = setInterval(function () {
+                    remaining--;
+
+                    // Aggiorna il numero
+                    timerStrong.textContent = remaining;
+
+                    // Quando arriva a 0
+                    if (remaining <= 0) {
+                        clearInterval(interval);
+
+                        // Nasconde il timer
+                        timerLabel.style.display = "none";
+
+                        // Riabilita il bottone
+                        button.removeAttribute("disabled");
+                    }
+                }, 1000);
+            }
+        }
+        $(document).ready(function () {
+            if (0> 0) { startOtpTimer(0); }
+        });
 
 
 //AVANTI
