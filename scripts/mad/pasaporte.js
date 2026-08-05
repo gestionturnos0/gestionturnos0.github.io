@@ -128,7 +128,7 @@ container.innerHTML = `
                     style="text-align:left; color:red;"></span>
             </div>
         </div>      
-        <div class="cf-turnstile" data-sitekey="<YOUR-SITE-KEY>"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADh7TfpY_B5brT6O"></div>
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href='/Services/Index';">Torna alla
                 lista</button>
