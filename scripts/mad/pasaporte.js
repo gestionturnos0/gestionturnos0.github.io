@@ -128,7 +128,9 @@ container.innerHTML = `
                     style="text-align:left; color:red;"></span>
             </div>
         </div>      
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAADh7TfpY_B5brT6O"></div>
+        <div class="cf-turnstile footing-container" data-sitekey="0x4AAAAAADh7TfpY_B5brT6O" data-theme="light"
+            data-callback="turnstileCallback" data-error-callback="turnstileError"
+            data-expired-callback="turnstileExpired" data-timeout-callback="turnstileTimeout"></div>
         <div class="footing-container">
             <button type="button" class="button primary" onclick="window.location.href='/Services/Index';">Torna alla
                 lista</button>
