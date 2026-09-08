@@ -2,11 +2,14 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  /*<script>
+  1
+  <!--
+  <script>
       document.getElementById("btnAvanti").onclick = function() {
           document.getElementById("bookingForm").submit();
       };
-  </script>*/
+  </script>
+  -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   
 <form action="/Services/Booking/5659" enctype="multipart/form-data" id="bookingForm" method="post">
