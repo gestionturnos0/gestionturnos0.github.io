@@ -12,7 +12,14 @@ try {
     console.log(exception)
 }
 
-turnstile.reset(widgetId);
+const widgetId = turnstile.render("#turnstile-container", {
+	sitekey: "0x4AAAAAADh7TfpY_B5brT6O",
+	callback: function (token) {
+		console.log("Cf turnstile Success:", token);
+	},
+});
+
+/*
 $(document).ready(function () {
     $('#btnRegister').prop('disabled', true);
 });
@@ -32,7 +39,7 @@ function turnstileTimeout() {
     $('#btnAvanti').prop('disabled', true);
     turnstile.reset();
     console.log('turnstileTimeout');
-}
+}*/
 
 var numDivCompanionsVisibile = 0;
 //$(document).ready(function () {
