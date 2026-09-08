@@ -143,23 +143,5 @@ container.innerHTML = `
     </div>
 </form>
 
-<script>
-function turnstileCallback() {
-      $('#btnAvanti').prop('disabled', false);
-      console.log('turnstileCallback');
-  }
-  function turnstileError() {
-      window.alert('Si &#232; verificato un errore durante l’elaborazione della richiesta');
-  }
-  function turnstileExpired() {
-      $('#btnAvanti').prop('disabled', true);
-      turnstile.reset();
-      console.log('turnstileExpired');
-  }
-  function turnstileTimeout() {
-      $('#btnAvanti').prop('disabled', true);
-      turnstile.reset();
-      console.log('turnstileTimeout');
-  }
-  </script>
+<div id="turnstile-container"></div>
 `;
