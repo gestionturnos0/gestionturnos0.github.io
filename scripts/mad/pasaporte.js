@@ -2,7 +2,7 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  1
+  2
   <!--
   <script>
       document.getElementById("btnAvanti").onclick = function() {
@@ -142,4 +142,22 @@ container.innerHTML = `
         </div>
     </div>
 </form>
+
+function turnstileCallback() {
+      $('#btnAvanti').prop('disabled', false);
+      console.log('turnstileCallback');
+  }
+  function turnstileError() {
+      window.alert('Si &#232; verificato un errore durante l’elaborazione della richiesta');
+  }
+  function turnstileExpired() {
+      $('#btnAvanti').prop('disabled', true);
+      turnstile.reset();
+      console.log('turnstileExpired');
+  }
+  function turnstileTimeout() {
+      $('#btnAvanti').prop('disabled', true);
+      turnstile.reset();
+      console.log('turnstileTimeout');
+  }
 `;
