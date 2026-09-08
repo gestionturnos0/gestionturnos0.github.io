@@ -2,7 +2,7 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  3
+  4
   <!--
   <script>
       document.getElementById("btnAvanti").onclick = function() {
@@ -149,4 +149,13 @@ container.innerHTML = `
 </form>
 
 <div id="turnstile-container"></div>
+
+<script>
+  const widgetId = turnstile.render("#turnstile-container", {
+  	sitekey: "0x4AAAAAADh7TfpY_B5brT6O",
+  	callback: function (token) {
+  		console.log("Cf turnstile Success:", token);
+  	},
+  });
+</script>
 `;
