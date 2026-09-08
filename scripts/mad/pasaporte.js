@@ -10,7 +10,12 @@ container.innerHTML = `
       };
   </script>
   -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!--<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>-->
+
+  <script
+  	src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+  	defer
+  ></script>
   
 <form action="/Services/Booking/5659" enctype="multipart/form-data" id="bookingForm" method="post">
     <link href="/Content/Site.css" rel="stylesheet">
