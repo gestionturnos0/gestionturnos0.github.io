@@ -12,6 +12,7 @@ try {
     console.log(exception)
 }
 
+turnstile.reset(widgetId);
 $(document).ready(function () {
     $('#btnRegister').prop('disabled', true);
 });
