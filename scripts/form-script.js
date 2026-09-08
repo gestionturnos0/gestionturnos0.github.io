@@ -12,13 +12,6 @@ try {
     console.log(exception)
 }
 
-const widgetId = turnstile.render("#turnstile-container", {
-	sitekey: "0x4AAAAAADh7TfpY_B5brT6O",
-	callback: function (token) {
-		console.log("Cf turnstile Success:", token);
-	},
-});
-
 /*
 $(document).ready(function () {
     $('#btnRegister').prop('disabled', true);
