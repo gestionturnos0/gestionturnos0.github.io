@@ -2,7 +2,7 @@ const container = document.getElementsByTagName('section')[0];
 container.innerHTML = '';
 
 container.innerHTML = `
-  2
+  3
   <!--
   <script>
       document.getElementById("btnAvanti").onclick = function() {
@@ -143,6 +143,7 @@ container.innerHTML = `
     </div>
 </form>
 
+<script>
 function turnstileCallback() {
       $('#btnAvanti').prop('disabled', false);
       console.log('turnstileCallback');
@@ -160,4 +161,5 @@ function turnstileCallback() {
       turnstile.reset();
       console.log('turnstileTimeout');
   }
+  </script>
 `;
